@@ -1,0 +1,120 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1EFAD966-6410-C4BB-81F7-600CE997B47D" schemaObject="7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6" name="RESERVATION">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:35:39 UTC</createdTime>
+<comment><![CDATA[Stores information about reservations.]]></comment>
+<commentInRDBMS><![CDATA[Stores information about reservations.]]></commentInRDBMS>
+<ownerDesignName>hotel_design</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="4B265336-8AEE-573A-1E64-D32F9D7E31AD">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:36:37 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>100</autoIncrementCache>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
+</Column>
+<Column name="ReservationDate" id="D3AEC832-41D3-718B-9FAF-C52522783D44">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:47:32 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CheckInDate" id="A6C2FDFA-F73A-F0FD-6E44-719996195983">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:47:32 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CheckOutDate" id="E23BFE48-F3BD-1502-04C5-DF2463BAAB58">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:47:50 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RoomId" id="16316406-D95A-25A7-23DC-C3B2A6D57216">
+<createdBy>user</createdBy>
+<createdTime>2020-01-04 17:03:31 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="393FF058-EEBA-3D8C-4A38-F2217EE6810F" referredColumn="8D1ECDAD-E636-3789-B015-7342D2A42183"/>
+</associations>
+</Column>
+<Column name="ReservationStatusId" id="7182520F-9400-8B34-F047-0ECF53935F31">
+<createdBy>user</createdBy>
+<createdTime>2020-01-04 17:05:28 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A5A9116F-012C-36A6-42D7-A18A6108660D" referredColumn="CB7E9009-3BCD-C9F4-43F2-2B4A549AEE5D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3057C5D5-45C9-E709-728D-28559EE1A7DE" name="RESERVATIONS_PK">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:36:51 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B265336-8AEE-573A-1E64-D32F9D7E31AD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4AFFE993-96BC-30B4-48BF-AF2EF475899F" name="RoomId">
+<createdBy>user</createdBy>
+<createdTime>2020-01-04 17:03:31 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16316406-D95A-25A7-23DC-C3B2A6D57216"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="66D8F212-65B7-46F2-BB9B-D15BC080DEE8" name="ReservationStatusId">
+<createdBy>user</createdBy>
+<createdTime>2020-01-04 17:05:28 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7182520F-9400-8B34-F047-0ECF53935F31"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

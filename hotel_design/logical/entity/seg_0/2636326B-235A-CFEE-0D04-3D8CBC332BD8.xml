@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2636326B-235A-CFEE-0D04-3D8CBC332BD8" name="PAYMENTS FOR RESERVATION">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>8DE99BC6-7914-64F1-AD71-2C2842F8DCC3</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ReservationId" id="A78186FD-C283-F876-4DAB-480278B536AD">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>62791764-ED98-B092-555B-16A46AF2F3C2</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<referedAttribute>49CA8780-0033-8E41-F391-06CB696685FD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PaymentId" id="B435BE3F-90C8-BE4F-FB5C-FBEEE53E7B85">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>5C7711B8-8D4A-A2F9-918B-DE05E4EA5F1D</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<referedAttribute>6111C77E-CCB2-BE94-2542-D52113B82F5A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3ADA8FE2-00F5-A310-51C0-7EDD7BFF42A6" name="PAYMENTS FOR RESERVATION PK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>1D4A6F8F-FB2E-178C-F407-76BAB3495C34</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B435BE3F-90C8-BE4F-FB5C-FBEEE53E7B85</attributeRef>
+<attributeRef>A78186FD-C283-F876-4DAB-480278B536AD</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

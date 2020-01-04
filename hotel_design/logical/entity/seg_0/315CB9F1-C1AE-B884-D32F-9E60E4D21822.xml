@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="315CB9F1-C1AE-B884-D32F-9E60E4D21822" name="ROOM">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>C49758C7-B7AA-C0AB-1394-76F156B8784D</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id" id="545A2EF5-8667-3080-EF45-CDA313AE6227">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>8D1ECDAD-E636-3789-B015-7342D2A42183</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MaxTenants" id="0B37DE2D-3A65-1E8F-D228-D184A4DD26B7">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>CC951FE1-947E-0A43-8258-E7641A6B0864</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="RoomTypeId" id="1DD8D4FE-B321-E114-46CE-C779A83F2119">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>2E22713A-CBF4-6190-08CC-EBCEC50E2179</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<referedAttribute>C2EFDC18-A52D-5D08-7C4F-5E61FF8D5BDE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4312C284-E810-3CDA-ADC1-6543DC520909" name="ROOM PK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>63F3F833-EB15-9128-DCA0-E4B4D861C97C</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>545A2EF5-8667-3080-EF45-CDA313AE6227</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

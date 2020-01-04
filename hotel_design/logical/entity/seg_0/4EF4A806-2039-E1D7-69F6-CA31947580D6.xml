@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4EF4A806-2039-E1D7-69F6-CA31947580D6" name="PAYMENT">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>FE7D57E2-9E81-DBE1-4909-58DF766B4DFF</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id" id="6111C77E-CCB2-BE94-2542-D52113B82F5A">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>6C3A48BA-407F-2D70-FE2E-88F9DE1C70D8</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Amount" id="0EF48464-8AC6-4C63-2C0D-B66985D5CCC3">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>55CE44D9-67C1-FF02-268D-B9028FAED9D0</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,9,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PaymentTypeId" id="483BFC2E-B050-DACE-F194-F1DA9B1EF41C">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>B2893377-7EB0-E989-57CC-C4F4398FB261</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<referedAttribute>93BA18DE-A980-6CF9-B1E5-BC5E335103DA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="02B4E0C1-AEEE-5780-FD31-AD8378F34917" name="PAYMENT PK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>E6F6EF23-DAF8-02A2-6507-AF4715A576D9</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6111C77E-CCB2-BE94-2542-D52113B82F5A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

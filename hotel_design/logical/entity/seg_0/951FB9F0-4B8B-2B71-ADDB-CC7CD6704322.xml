@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="951FB9F0-4B8B-2B71-ADDB-CC7CD6704322" name="PAYMENT TYPE">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>70C9885A-47AC-FD22-2599-DBC8C5E8D627</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id" id="93BA18DE-A980-6CF9-B1E5-BC5E335103DA">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>EF64E959-C3B3-B76B-89A8-4FF590701A1A</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="B746DE04-ABF1-F26F-8E6A-79AF8AC972A5">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>27E6DC80-9091-8803-B2A3-EEB5D75148DC</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="87C39ADC-892D-BB04-152A-53D7EF0DFA8B" name="PAYMENT TYPE PK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>BD1DC91A-BE68-38A0-90A8-22BAA9DF0FAB</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>93BA18DE-A980-6CF9-B1E5-BC5E335103DA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

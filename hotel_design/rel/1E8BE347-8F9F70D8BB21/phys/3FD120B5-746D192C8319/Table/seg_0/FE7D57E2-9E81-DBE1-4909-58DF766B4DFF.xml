@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="PAYMENT" directorySegmentName="seg_0" id="FE7D57E2-9E81-DBE1-4909-58DF766B4DFF">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:25:58 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<schemaObject>7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="PaymentTypeId" id="4270E0EA-41A1-B160-DE11-8513C8272F86">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:25:58 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Amount" id="55CE44D9-67C1-FF02-268D-B9028FAED9D0">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:25:58 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Id" id="6C3A48BA-407F-2D70-FE2E-88F9DE1C70D8">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:25:58 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="PAYMENT_PAYMENT_TYPE_FK" id="BAE0494C-C4AB-E1E3-91AE-8296DA85E87F">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:25:58 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PAYMENT_PK" id="E6F6EF23-DAF8-02A2-6507-AF4715A576D9">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:25:58 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

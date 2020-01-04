@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6B899044-CFF3-D8C9-23B0-92624363ADF7" schemaObject="7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6" name="GUESTS_IN_RESERVATION">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 18:41:21 UTC</createdTime>
+<comment><![CDATA[Stores information about guests assigned to specific reservations.]]></comment>
+<commentInRDBMS><![CDATA[Stores information about guests assigned to specific reservations.]]></commentInRDBMS>
+<ownerDesignName>hotel_design</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="GuestId" id="3AEB9609-7709-76EA-25C7-7E6C3DE93036">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 18:42:06 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C6E988A6-EDC4-7B61-D511-E6AA4F6C04A9" referredColumn="CFF32371-7ECC-335B-793B-C6113146C411"/>
+</associations>
+</Column>
+<Column name="ReservationId" id="522254F7-A33F-B18C-B402-C14F520AFEB4">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 18:42:11 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D4B7F9E4-2EA8-F520-C359-C23833CA6A52" referredColumn="4B265336-8AEE-573A-1E64-D32F9D7E31AD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FE3A9938-8EA4-C456-BA20-448BA9D86E18" name="GUESTS_IN_RESERVATION_PK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 18:42:51 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3AEB9609-7709-76EA-25C7-7E6C3DE93036"/>
+<colUsage columnID="522254F7-A33F-B18C-B402-C14F520AFEB4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7F6AF7E8-4B86-3147-C7DA-DF68CCACD2F1" name="GUESTS_IN_RESERVATION_GUEST_FK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 18:42:06 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3AEB9609-7709-76EA-25C7-7E6C3DE93036"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="526BB36D-9362-CBD5-970A-2E0F585B58B2" name="GUESTS_IR_RESERVATION_FK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 18:42:11 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="522254F7-A33F-B18C-B402-C14F520AFEB4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

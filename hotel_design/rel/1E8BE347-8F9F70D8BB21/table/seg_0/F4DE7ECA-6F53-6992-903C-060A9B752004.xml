@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F4DE7ECA-6F53-6992-903C-060A9B752004" schemaObject="7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6" name="SEASON_PRICING">
+<createdBy>user</createdBy>
+<createdTime>2020-01-04 17:29:40 UTC</createdTime>
+<comment><![CDATA[Defines the pricing depending on the season.]]></comment>
+<commentInRDBMS><![CDATA[Defines the pricing depending on the season.]]></commentInRDBMS>
+<ownerDesignName>hotel_design</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="7DED94EF-CA64-CA7A-F964-16C7D5941C24">
+<createdBy>user</createdBy>
+<createdTime>2020-01-04 17:31:50 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="StartDate" id="188D9BD6-89C2-C59D-E5FA-5C0DF5C99B5F">
+<createdBy>user</createdBy>
+<createdTime>2020-01-04 17:32:07 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EndDate" id="2E639442-4DC8-FE92-9980-A989E728DDBC">
+<createdBy>user</createdBy>
+<createdTime>2020-01-04 17:32:17 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Multiplier" id="9F57E1C4-3803-2617-311B-E0F1195292FA">
+<createdBy>user</createdBy>
+<createdTime>2020-01-04 17:33:06 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="17E3A24C-7616-6D83-CE0B-D99C7061DE9B" name="SEASON_PRICING_PK">
+<createdBy>user</createdBy>
+<createdTime>2020-01-04 17:31:50 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DED94EF-CA64-CA7A-F964-16C7D5941C24"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

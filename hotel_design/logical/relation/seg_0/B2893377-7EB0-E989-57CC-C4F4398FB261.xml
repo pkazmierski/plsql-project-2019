@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PAYMENT_PAYMENT_TYPE_FK" directorySegmentName="seg_0" id="B2893377-7EB0-E989-57CC-C4F4398FB261">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:05:04 UTC</createdTime>
+<generatorID>BB59E0CA-6D8F-0D4A-9CEF-8D3CEA3B312C</generatorID>
+<ownerDesignName>hotel_design</ownerDesignName>
+<engineerTo>
+<item key="1E8BE347-1214-8184-E014-8F9F70D8BB21" value="true"/>
+</engineerTo>
+<sourcePk>87C39ADC-892D-BB04-152A-53D7EF0DFA8B</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>951FB9F0-4B8B-2B71-ADDB-CC7CD6704322</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>4EF4A806-2039-E1D7-69F6-CA31947580D6</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

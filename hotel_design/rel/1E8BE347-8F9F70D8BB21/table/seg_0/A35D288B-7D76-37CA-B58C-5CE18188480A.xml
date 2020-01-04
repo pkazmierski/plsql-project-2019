@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A35D288B-7D76-37CA-B58C-5CE18188480A" schemaObject="7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6" name="DOCUMENT_TYPE">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-01 18:34:28 UTC</createdTime>
+<comment><![CDATA[Defines possible document types.]]></comment>
+<commentInRDBMS><![CDATA[Defines possible document types.]]></commentInRDBMS>
+<ownerDesignName>hotel_design</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="9C9DBEA5-E4A2-91AF-2733-A6A76E6816E7">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-01 18:34:53 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="2B397222-D19A-1643-3527-9883335B11AA">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-01 18:35:17 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9B6BC860-447B-0442-FC8C-C8DE34A6EF56" name="document_type_PK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-01 18:34:53 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9C9DBEA5-E4A2-91AF-2733-A6A76E6816E7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

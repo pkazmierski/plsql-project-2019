@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="4855B36B-2E7A-57F6-C58C-C8053C984FFE" mainViewID="65A95C4A-7ACB-75C1-4CAF-BB26D034F5B4">
+<createdBy>user</createdBy>
+<createdTime>2019-12-20 20:05:14 UTC</createdTime>
+<ownerDesignName>HotelDatabaseDiagram</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

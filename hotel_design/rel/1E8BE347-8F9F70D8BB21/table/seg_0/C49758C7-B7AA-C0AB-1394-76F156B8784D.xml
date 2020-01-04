@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C49758C7-B7AA-C0AB-1394-76F156B8784D" schemaObject="7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6" name="ROOM">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:48:00 UTC</createdTime>
+<comment><![CDATA[Stores information about rooms.]]></comment>
+<commentInRDBMS><![CDATA[Stores information about rooms.]]></commentInRDBMS>
+<ownerDesignName>hotel_design</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="8D1ECDAD-E636-3789-B015-7342D2A42183">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:51:08 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MaxTenants" id="CC951FE1-947E-0A43-8258-E7641A6B0864">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:51:32 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RoomTypeId" id="DC301079-AF60-7E4D-03EB-D79D125844E0">
+<createdBy>user</createdBy>
+<createdTime>2020-01-04 17:03:08 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1B3B3F1D-B13F-2973-7ED1-3971656F18A3" referredColumn="B09BA528-C14B-F4A6-0631-D56F5F6D0032"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="63F3F833-EB15-9128-DCA0-E4B4D861C97C" name="ROOM_PK">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:51:08 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8D1ECDAD-E636-3789-B015-7342D2A42183"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F68FE58B-A2AB-55ED-6704-64731ADE74C8" name="RoomTypeId">
+<createdBy>user</createdBy>
+<createdTime>2020-01-04 17:03:08 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DC301079-AF60-7E4D-03EB-D79D125844E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FE7D57E2-9E81-DBE1-4909-58DF766B4DFF" schemaObject="7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6" name="PAYMENT">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-01 19:01:11 UTC</createdTime>
+<comment><![CDATA[Stores information about payments.]]></comment>
+<commentInRDBMS><![CDATA[Stores information about payments.]]></commentInRDBMS>
+<ownerDesignName>hotel_design</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="6C3A48BA-407F-2D70-FE2E-88F9DE1C70D8">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-01 19:01:19 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_PAYMENT_Id</notNullConstraintName>
+</Column>
+<Column name="Amount" id="55CE44D9-67C1-FF02-268D-B9028FAED9D0">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-01 19:02:13 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,9,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PaymentTypeId" id="4270E0EA-41A1-B160-DE11-8513C8272F86">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-01 19:03:32 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BB59E0CA-6D8F-0D4A-9CEF-8D3CEA3B312C" referredColumn="EF64E959-C3B3-B76B-89A8-4FF590701A1A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E6F6EF23-DAF8-02A2-6507-AF4715A576D9" name="PAYMENT_PK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-01 19:01:34 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C3A48BA-407F-2D70-FE2E-88F9DE1C70D8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BAE0494C-C4AB-E1E3-91AE-8296DA85E87F" name="PAYMENT_PAYMENT_TYPE_FK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-01 19:03:32 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4270E0EA-41A1-B160-DE11-8513C8272F86"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

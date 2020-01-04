@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="70C9885A-47AC-FD22-2599-DBC8C5E8D627" schemaObject="7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6" name="PAYMENT_TYPE">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:53:32 UTC</createdTime>
+<comment><![CDATA[Defines possible payment types.]]></comment>
+<commentInRDBMS><![CDATA[Defines possible payment types.]]></commentInRDBMS>
+<ownerDesignName>hotel_design</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id" id="EF64E959-C3B3-B76B-89A8-4FF590701A1A">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:54:14 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="27E6DC80-9091-8803-B2A3-EEB5D75148DC">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:54:28 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BD1DC91A-BE68-38A0-90A8-22BAA9DF0FAB" name="PAYMENT_TYPE_PK">
+<createdBy>user</createdBy>
+<createdTime>2019-12-21 08:54:14 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF64E959-C3B3-B76B-89A8-4FF590701A1A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

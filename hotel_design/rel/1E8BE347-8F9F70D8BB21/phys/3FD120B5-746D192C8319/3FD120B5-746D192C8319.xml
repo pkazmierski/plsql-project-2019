@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<StorageDesignOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.StorageDesignOraclev12c" name="Oracle Database 12c" id="ABFFA7F5-7ABD-7012-BA4B-AB2F2F1DF9E1" siteID="3FD120B5-9F4E-6278-D5E2-746D192C8319" siteName="Oracle Database 12c" siteType="11">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:25:52 UTC</createdTime>
+<ownerDesignName>hotelv3</ownerDesignName>
+</StorageDesignOraclev12c>
