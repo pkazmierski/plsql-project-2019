@@ -19,6 +19,8 @@
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:25:58 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+<notnullConstraintnameChanged>true</notnullConstraintnameChanged>
 </ColumnProxy>
 </columnProxies>
 <primaryKeys>

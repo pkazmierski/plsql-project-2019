@@ -60,6 +60,8 @@
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+<notnullConstraintnameChanged>true</notnullConstraintnameChanged>
 </ColumnProxy>
 <ColumnProxy name="Email" id="F08DE28B-343B-7135-CC21-A2AF78EDE8D2">
 <createdBy>Piotr</createdBy>
