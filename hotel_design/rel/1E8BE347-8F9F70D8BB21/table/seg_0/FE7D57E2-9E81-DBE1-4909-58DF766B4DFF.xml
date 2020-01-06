@@ -21,6 +21,8 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementColumn>true</autoIncrementColumn>
 <identityColumn>true</identityColumn>
+<autoIncrementMinValue>1</autoIncrementMinValue>
+<autoIncrementMaxValue>9999999999999999999999999999</autoIncrementMaxValue>
 <autoIncrementDisableCache>false</autoIncrementDisableCache>
 <autoIncrementCache>200</autoIncrementCache>
 <autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
