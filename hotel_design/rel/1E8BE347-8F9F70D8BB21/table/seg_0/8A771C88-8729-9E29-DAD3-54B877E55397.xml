@@ -2,6 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8A771C88-8729-9E29-DAD3-54B877E55397" schemaObject="7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6" name="GUEST">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
+<comment><![CDATA[Stores information about guests.]]></comment>
+<commentInRDBMS><![CDATA[Stores information about guests.]]></commentInRDBMS>
 <ownerDesignName>hotel_design</ownerDesignName>
 <ordsAlias>table_1</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
@@ -18,7 +20,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementColumn>true</autoIncrementColumn>
 <identityColumn>true</identityColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>1000</autoIncrementCache>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
 </Column>
 <Column name="FirstName" id="BC6DF3D8-C06D-532C-19B2-8053D0C65D48">
 <createdBy>Piotr</createdBy>
@@ -42,7 +46,7 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Addres" id="B5C9CD74-C077-2403-BD7A-AD463BEE2878">
+<Column name="Address" id="B5C9CD74-C077-2403-BD7A-AD463BEE2878">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -53,7 +57,7 @@
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="PhoneNmber" id="C89CFBD6-7198-037F-162F-43C859DABEAD">
+<Column name="PhoneNumber" id="C89CFBD6-7198-037F-162F-43C859DABEAD">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
