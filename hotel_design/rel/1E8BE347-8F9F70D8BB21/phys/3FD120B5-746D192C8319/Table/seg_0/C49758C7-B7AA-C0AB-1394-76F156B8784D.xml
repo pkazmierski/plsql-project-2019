@@ -10,26 +10,25 @@
 <accessDriverType>oracle_loader</accessDriverType>
 <rejectLimit></rejectLimit>
 <columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
-<ColumnProxy name="Id" id="8D1ECDAD-E636-3789-B015-7342D2A42183">
+<ColumnProxy name="ID" id="8D1ECDAD-E636-3789-B015-7342D2A42183">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:25:58 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 <autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
-<notnullConstraintnameChanged>true</notnullConstraintnameChanged>
 </ColumnProxy>
-<ColumnProxy name="MaxTenants" id="CC951FE1-947E-0A43-8258-E7641A6B0864">
+<ColumnProxy name="MAX_TENANTS" id="CC951FE1-947E-0A43-8258-E7641A6B0864">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:25:58 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="RoomTypeId" id="DC301079-AF60-7E4D-03EB-D79D125844E0">
+<ColumnProxy name="ROOM_TYPE_ID" id="DC301079-AF60-7E4D-03EB-D79D125844E0">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:25:58 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
 <foreignKeys>
-<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="RoomTypeId" id="F68FE58B-A2AB-55ED-6704-64731ADE74C8">
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="RM_RM_TP_FK" id="F68FE58B-A2AB-55ED-6704-64731ADE74C8">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:25:58 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
