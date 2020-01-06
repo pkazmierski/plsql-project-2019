@@ -6,11 +6,12 @@
 <commentInRDBMS><![CDATA[Defines possible reservation statuses.]]></commentInRDBMS>
 <ownerDesignName>hotel_design</ownerDesignName>
 <ordsAlias>table_9</ordsAlias>
+<abbreviation>RSRV_STS</abbreviation>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="CB7E9009-3BCD-C9F4-43F2-2B4A549AEE5D">
+<Column name="ID" id="CB7E9009-3BCD-C9F4-43F2-2B4A549AEE5D">
 <createdBy>user</createdBy>
 <createdTime>2019-12-21 08:59:16 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -22,7 +23,7 @@
 <identityColumn>true</identityColumn>
 <autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
 </Column>
-<Column name="Name" id="5CC2978C-970C-E58B-4081-9B07087D6A1D">
+<Column name="NAME" id="5CC2978C-970C-E58B-4081-9B07087D6A1D">
 <createdBy>user</createdBy>
 <createdTime>2019-12-21 08:59:44 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -35,7 +36,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="2350B6F6-6855-8FF9-FD1E-B59E9DC3D391" name="RESERVATION_SATUS_PK">
+<ind_PK_UK id="2350B6F6-6855-8FF9-FD1E-B59E9DC3D391" name="RESERVATION_STATUS_PK">
 <createdBy>user</createdBy>
 <createdTime>2019-12-21 08:59:16 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>

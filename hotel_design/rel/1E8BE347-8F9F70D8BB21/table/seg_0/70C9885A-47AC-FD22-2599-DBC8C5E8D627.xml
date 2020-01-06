@@ -6,11 +6,12 @@
 <commentInRDBMS><![CDATA[Defines possible payment types.]]></commentInRDBMS>
 <ownerDesignName>hotel_design</ownerDesignName>
 <ordsAlias>table_6</ordsAlias>
+<abbreviation>PYMNT_TP</abbreviation>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="EF64E959-C3B3-B76B-89A8-4FF590701A1A">
+<Column name="ID" id="EF64E959-C3B3-B76B-89A8-4FF590701A1A">
 <createdBy>user</createdBy>
 <createdTime>2019-12-21 08:54:14 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -22,7 +23,7 @@
 <identityColumn>true</identityColumn>
 <autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
 </Column>
-<Column name="Name" id="27E6DC80-9091-8803-B2A3-EEB5D75148DC">
+<Column name="NAME" id="27E6DC80-9091-8803-B2A3-EEB5D75148DC">
 <createdBy>user</createdBy>
 <createdTime>2019-12-21 08:54:28 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>

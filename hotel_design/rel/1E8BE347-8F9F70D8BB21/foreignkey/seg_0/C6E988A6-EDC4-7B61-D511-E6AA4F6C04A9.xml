@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C6E988A6-EDC4-7B61-D511-E6AA4F6C04A9" containerWithKeyObject="6B899044-CFF3-D8C9-23B0-92624363ADF7" localFKIndex="7F6AF7E8-4B86-3147-C7DA-DF68CCACD2F1" name="GUESTS_IN_RESERVATION_GUEST_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C6E988A6-EDC4-7B61-D511-E6AA4F6C04A9" containerWithKeyObject="6B899044-CFF3-D8C9-23B0-92624363ADF7" localFKIndex="7F6AF7E8-4B86-3147-C7DA-DF68CCACD2F1" name="GSTS_IN_RSRV_GST_FK">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 18:42:06 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -9,7 +9,7 @@
 <keyObject>5BA4F5D5-7CD7-AABA-50EB-466E959931FA</keyObject>
 <referredKeyID>5BA4F5D5-7CD7-AABA-50EB-466E959931FA</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>Id</refColNames>
+<refColNames>ID</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

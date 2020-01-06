@@ -6,11 +6,12 @@
 <commentInRDBMS><![CDATA[Stores information about guests.]]></commentInRDBMS>
 <ownerDesignName>hotel_design</ownerDesignName>
 <ordsAlias>table_1</ordsAlias>
+<abbreviation>GST</abbreviation>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="CFF32371-7ECC-335B-793B-C6113146C411">
+<Column name="ID" id="CFF32371-7ECC-335B-793B-C6113146C411">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -24,7 +25,7 @@
 <autoIncrementCache>1000</autoIncrementCache>
 <autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
 </Column>
-<Column name="FirstName" id="BC6DF3D8-C06D-532C-19B2-8053D0C65D48">
+<Column name="FIRST_NAME" id="BC6DF3D8-C06D-532C-19B2-8053D0C65D48">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -35,7 +36,7 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="LastName" id="CE111064-679E-D1E2-531C-E0514F54D51C">
+<Column name="LAST_NAME" id="CE111064-679E-D1E2-531C-E0514F54D51C">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -46,7 +47,7 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Address" id="B5C9CD74-C077-2403-BD7A-AD463BEE2878">
+<Column name="ADDRESS" id="B5C9CD74-C077-2403-BD7A-AD463BEE2878">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -57,7 +58,7 @@
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="PhoneNumber" id="C89CFBD6-7198-037F-162F-43C859DABEAD">
+<Column name="PHONE" id="C89CFBD6-7198-037F-162F-43C859DABEAD">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -69,7 +70,7 @@
 <ownDataTypeParameters>,,11</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Email" id="F08DE28B-343B-7135-CC21-A2AF78EDE8D2">
+<Column name="EMAIL" id="F08DE28B-343B-7135-CC21-A2AF78EDE8D2">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -81,7 +82,7 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="DocumentId" id="4CCC6235-A30D-8A41-C2E6-C8192E4D5E10">
+<Column name="DOCUMENT_ID" id="4CCC6235-A30D-8A41-C2E6-C8192E4D5E10">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -92,7 +93,7 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Nationality" id="607CB136-6533-A566-AFCD-7039B4B2332A">
+<Column name="NATIONALITY" id="607CB136-6533-A566-AFCD-7039B4B2332A">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -103,11 +104,11 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Status" id="A79BD9F4-6C70-C42E-A319-80753F60DDC8">
+<Column name="STATUS" id="A79BD9F4-6C70-C42E-A319-80753F60DDC8">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
-<constraintName>ValidGuestStatusValues</constraintName>
+<constraintName>CK_GUEST_STATUS</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -122,7 +123,7 @@
 </rangeDef>
 </listOfRanges>
 </Column>
-<Column name="ReservationId" id="B41558AD-4847-C953-6B47-83BBEDBAA5E3">
+<Column name="RESERVATION_ID" id="B41558AD-4847-C953-6B47-83BBEDBAA5E3">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -133,7 +134,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="DocumentTypeId" id="A17F9112-9335-B8BF-F4CE-16D242313EF9">
+<Column name="DOCUMENT_TYPE_ID" id="A17F9112-9335-B8BF-F4CE-16D242313EF9">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:42:35 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -160,7 +161,7 @@
 <colUsage columnID="CFF32371-7ECC-335B-793B-C6113146C411"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="009A8698-9E71-900F-AEBD-8A3EAEA73AB1" name="GUEST_DOCUMENT_TYPE_FK">
+<ind_PK_UK id="009A8698-9E71-900F-AEBD-8A3EAEA73AB1" name="GST_DCMNT_TP_FK">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:42:34 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>

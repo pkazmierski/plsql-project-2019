@@ -6,11 +6,12 @@
 <commentInRDBMS><![CDATA[Stores information about payments.]]></commentInRDBMS>
 <ownerDesignName>hotel_design</ownerDesignName>
 <ordsAlias>table_9</ordsAlias>
+<abbreviation>PYMNT</abbreviation>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="6C3A48BA-407F-2D70-FE2E-88F9DE1C70D8">
+<Column name="ID" id="6C3A48BA-407F-2D70-FE2E-88F9DE1C70D8">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-01 19:01:19 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -23,9 +24,8 @@
 <autoIncrementDisableCache>false</autoIncrementDisableCache>
 <autoIncrementCache>200</autoIncrementCache>
 <autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
-<notNullConstraintName>NNC_PAYMENT_Id</notNullConstraintName>
 </Column>
-<Column name="Amount" id="55CE44D9-67C1-FF02-268D-B9028FAED9D0">
+<Column name="AMOUNT" id="55CE44D9-67C1-FF02-268D-B9028FAED9D0">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-01 19:02:13 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -37,7 +37,7 @@
 <ownDataTypeParameters>,9,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="PaymentTypeId" id="4270E0EA-41A1-B160-DE11-8513C8272F86">
+<Column name="PAYMENT_TYPE_ID" id="4270E0EA-41A1-B160-DE11-8513C8272F86">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-01 19:03:32 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -64,7 +64,7 @@
 <colUsage columnID="6C3A48BA-407F-2D70-FE2E-88F9DE1C70D8"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="BAE0494C-C4AB-E1E3-91AE-8296DA85E87F" name="PAYMENT_PAYMENT_TYPE_FK">
+<ind_PK_UK id="BAE0494C-C4AB-E1E3-91AE-8296DA85E87F" name="PYMNT_PYMNT_TP_FK">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-01 19:03:32 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>

@@ -6,11 +6,12 @@
 <commentInRDBMS><![CDATA[Defines possible room types.]]></commentInRDBMS>
 <ownerDesignName>hotel_design</ownerDesignName>
 <ordsAlias>table_7</ordsAlias>
+<abbreviation>RM_TP</abbreviation>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="B09BA528-C14B-F4A6-0631-D56F5F6D0032">
+<Column name="ID" id="B09BA528-C14B-F4A6-0631-D56F5F6D0032">
 <createdBy>user</createdBy>
 <createdTime>2019-12-21 08:55:31 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -22,7 +23,7 @@
 <identityColumn>true</identityColumn>
 <autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
 </Column>
-<Column name="Name" id="81AE10AB-8656-C8E0-8E1F-D016228F508B">
+<Column name="NAME" id="81AE10AB-8656-C8E0-8E1F-D016228F508B">
 <createdBy>user</createdBy>
 <createdTime>2019-12-21 08:55:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -33,7 +34,7 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="BasePrice" id="AB2E6CBF-4460-6EC0-4BBA-E268BAC0D77F">
+<Column name="BASE_PRICE" id="AB2E6CBF-4460-6EC0-4BBA-E268BAC0D77F">
 <createdBy>user</createdBy>
 <createdTime>2019-12-21 09:01:41 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>

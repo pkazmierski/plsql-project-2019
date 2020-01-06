@@ -6,11 +6,12 @@
 <commentInRDBMS><![CDATA[Defines the pricing depending on the season.]]></commentInRDBMS>
 <ownerDesignName>hotel_design</ownerDesignName>
 <ordsAlias>table_10</ordsAlias>
+<abbreviation>SSN_PRC</abbreviation>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="7DED94EF-CA64-CA7A-F964-16C7D5941C24">
+<Column name="ID" id="7DED94EF-CA64-CA7A-F964-16C7D5941C24">
 <createdBy>user</createdBy>
 <createdTime>2020-01-04 17:31:50 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -22,7 +23,7 @@
 <identityColumn>true</identityColumn>
 <autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
 </Column>
-<Column name="StartDate" id="188D9BD6-89C2-C59D-E5FA-5C0DF5C99B5F">
+<Column name="START_DATE" id="188D9BD6-89C2-C59D-E5FA-5C0DF5C99B5F">
 <createdBy>user</createdBy>
 <createdTime>2020-01-04 17:32:07 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -32,7 +33,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="EndDate" id="2E639442-4DC8-FE92-9980-A989E728DDBC">
+<Column name="END_DATE" id="2E639442-4DC8-FE92-9980-A989E728DDBC">
 <createdBy>user</createdBy>
 <createdTime>2020-01-04 17:32:17 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -42,7 +43,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Multiplier" id="9F57E1C4-3803-2617-311B-E0F1195292FA">
+<Column name="MULTIPLIER" id="9F57E1C4-3803-2617-311B-E0F1195292FA">
 <createdBy>user</createdBy>
 <createdTime>2020-01-04 17:33:06 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>

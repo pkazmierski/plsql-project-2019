@@ -6,11 +6,12 @@
 <commentInRDBMS><![CDATA[Defines possible document types.]]></commentInRDBMS>
 <ownerDesignName>hotel_design</ownerDesignName>
 <ordsAlias>table_8</ordsAlias>
+<abbreviation>DCMNT_TP</abbreviation>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="9C9DBEA5-E4A2-91AF-2733-A6A76E6816E7">
+<Column name="ID" id="9C9DBEA5-E4A2-91AF-2733-A6A76E6816E7">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-01 18:34:53 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -22,7 +23,7 @@
 <identityColumn>true</identityColumn>
 <autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
 </Column>
-<Column name="Name" id="2B397222-D19A-1643-3527-9883335B11AA">
+<Column name="NAME" id="2B397222-D19A-1643-3527-9883335B11AA">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-01 18:35:17 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -35,7 +36,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="9B6BC860-447B-0442-FC8C-C8DE34A6EF56" name="document_type_PK">
+<ind_PK_UK id="9B6BC860-447B-0442-FC8C-C8DE34A6EF56" name="DOCUMENT_TYPE_PK">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-01 18:34:53 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>

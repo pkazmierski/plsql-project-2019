@@ -6,11 +6,12 @@
 <commentInRDBMS><![CDATA[Stores information about guests assigned to specific reservations.]]></commentInRDBMS>
 <ownerDesignName>hotel_design</ownerDesignName>
 <ordsAlias>table_12</ordsAlias>
+<abbreviation>GSTS_IN_RSRV</abbreviation>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="GuestId" id="3AEB9609-7709-76EA-25C7-7E6C3DE93036">
+<Column name="GUEST_ID" id="3AEB9609-7709-76EA-25C7-7E6C3DE93036">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 18:42:06 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -19,14 +20,13 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
-<autoIncrementColumn>true</autoIncrementColumn>
-<identityColumn>true</identityColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
 <associations>
 <colAssociation fkAssociation="C6E988A6-EDC4-7B61-D511-E6AA4F6C04A9" referredColumn="CFF32371-7ECC-335B-793B-C6113146C411"/>
 </associations>
 </Column>
-<Column name="ReservationId" id="522254F7-A33F-B18C-B402-C14F520AFEB4">
+<Column name="RESERVATION_ID" id="522254F7-A33F-B18C-B402-C14F520AFEB4">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 18:42:11 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -54,7 +54,7 @@
 <colUsage columnID="522254F7-A33F-B18C-B402-C14F520AFEB4"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="7F6AF7E8-4B86-3147-C7DA-DF68CCACD2F1" name="GUESTS_IN_RESERVATION_GUEST_FK">
+<ind_PK_UK id="7F6AF7E8-4B86-3147-C7DA-DF68CCACD2F1" name="GSTS_IN_RSRV_GST_FK">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 18:42:06 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -64,7 +64,7 @@
 <colUsage columnID="3AEB9609-7709-76EA-25C7-7E6C3DE93036"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="526BB36D-9362-CBD5-970A-2E0F585B58B2" name="GUESTS_IR_RESERVATION_FK">
+<ind_PK_UK id="526BB36D-9362-CBD5-970A-2E0F585B58B2" name="GSTS_IN_RSRV_RSRV_FK">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 18:42:11 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>

@@ -6,11 +6,12 @@
 <commentInRDBMS><![CDATA[Stores information about rooms.]]></commentInRDBMS>
 <ownerDesignName>hotel_design</ownerDesignName>
 <ordsAlias>table_4</ordsAlias>
+<abbreviation>RM</abbreviation>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Id" id="8D1ECDAD-E636-3789-B015-7342D2A42183">
+<Column name="ID" id="8D1ECDAD-E636-3789-B015-7342D2A42183">
 <createdBy>user</createdBy>
 <createdTime>2019-12-21 08:51:08 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -21,9 +22,8 @@
 <autoIncrementColumn>true</autoIncrementColumn>
 <identityColumn>true</identityColumn>
 <autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
-<notNullConstraintName>NNC_ROOM_Id</notNullConstraintName>
 </Column>
-<Column name="MaxTenants" id="CC951FE1-947E-0A43-8258-E7641A6B0864">
+<Column name="MAX_TENANTS" id="CC951FE1-947E-0A43-8258-E7641A6B0864">
 <createdBy>user</createdBy>
 <createdTime>2019-12-21 08:51:32 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -32,9 +32,8 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-<notNullConstraintName>NNC_ROOM_MaxTenants</notNullConstraintName>
 </Column>
-<Column name="RoomTypeId" id="DC301079-AF60-7E4D-03EB-D79D125844E0">
+<Column name="ROOM_TYPE_ID" id="DC301079-AF60-7E4D-03EB-D79D125844E0">
 <createdBy>user</createdBy>
 <createdTime>2020-01-04 17:03:08 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -44,7 +43,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
-<notNullConstraintName>NNC_ROOM_RoomTypeId</notNullConstraintName>
 <associations>
 <colAssociation fkAssociation="1B3B3F1D-B13F-2973-7ED1-3971656F18A3" referredColumn="B09BA528-C14B-F4A6-0631-D56F5F6D0032"/>
 </associations>
@@ -62,7 +60,7 @@
 <colUsage columnID="8D1ECDAD-E636-3789-B015-7342D2A42183"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="F68FE58B-A2AB-55ED-6704-64731ADE74C8" name="ROOM_ROOM_TYPE_FK">
+<ind_PK_UK id="F68FE58B-A2AB-55ED-6704-64731ADE74C8" name="RM_RM_TP_FK">
 <createdBy>user</createdBy>
 <createdTime>2020-01-04 17:03:08 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>

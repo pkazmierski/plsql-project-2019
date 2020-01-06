@@ -6,11 +6,12 @@
 <commentInRDBMS><![CDATA[Stores informations about payments (including partial payments) for reservations.]]></commentInRDBMS>
 <ownerDesignName>hotel_design</ownerDesignName>
 <ordsAlias>table_14</ordsAlias>
+<abbreviation>PYMTNS_FOR_RSRV</abbreviation>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ReservationId" id="1083C3E7-7F99-F149-F5FC-54234F78DCD0">
+<Column name="RESERVATION_ID" id="1083C3E7-7F99-F149-F5FC-54234F78DCD0">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 18:45:57 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -24,7 +25,7 @@
 <colAssociation fkAssociation="A6E1B63B-6A41-9171-EBB2-99FA52286E0C" referredColumn="4B265336-8AEE-573A-1E64-D32F9D7E31AD"/>
 </associations>
 </Column>
-<Column name="PaymentId" id="74669AFA-2A9B-41A5-69D5-731475CE10A8">
+<Column name="PAYMENT_ID" id="74669AFA-2A9B-41A5-69D5-731475CE10A8">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 18:46:01 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -52,7 +53,7 @@
 <colUsage columnID="1083C3E7-7F99-F149-F5FC-54234F78DCD0"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="AA4A70B8-99AB-7FAD-5E6E-8CE4AAD2CA82" name="PAYMENTS_FR_RESERVATION_FK">
+<ind_PK_UK id="AA4A70B8-99AB-7FAD-5E6E-8CE4AAD2CA82" name="PYMNTS_FOR_RSRV_RSVR_FK">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 18:45:57 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -62,7 +63,7 @@
 <colUsage columnID="1083C3E7-7F99-F149-F5FC-54234F78DCD0"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="79A6EA3F-4601-BFDC-0B0D-9C50EEB6FFB6" name="PAYMENTS_FR_PAYMENT_FK">
+<ind_PK_UK id="79A6EA3F-4601-BFDC-0B0D-9C50EEB6FFB6" name="PYMNTS_FOR_RSRV_PYMNT_FK">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 18:46:01 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
