@@ -10,69 +10,73 @@
 <accessDriverType>oracle_loader</accessDriverType>
 <rejectLimit></rejectLimit>
 <columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
-<ColumnProxy name="DocumentId" id="4CCC6235-A30D-8A41-C2E6-C8192E4D5E10">
+<ColumnProxy name="DOCUMENT_ID" id="4CCC6235-A30D-8A41-C2E6-C8192E4D5E10">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="Nationality" id="607CB136-6533-A566-AFCD-7039B4B2332A">
+<ColumnProxy name="NATIONALITY" id="607CB136-6533-A566-AFCD-7039B4B2332A">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="DocumentTypeId" id="A17F9112-9335-B8BF-F4CE-16D242313EF9">
+<ColumnProxy name="DOCUMENT_TYPE_ID" id="A17F9112-9335-B8BF-F4CE-16D242313EF9">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:42:35 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="Status" id="A79BD9F4-6C70-C42E-A319-80753F60DDC8">
-<createdBy>Piotr</createdBy>
-<createdTime>2020-01-04 19:40:51 UTC</createdTime>
-<ownerDesignName>hotel_design</ownerDesignName>
-<defaultValue>1</defaultValue>
-</ColumnProxy>
-<ColumnProxy name="ReservationId" id="B41558AD-4847-C953-6B47-83BBEDBAA5E3">
+<ColumnProxy name="RESERVATION_ID" id="B41558AD-4847-C953-6B47-83BBEDBAA5E3">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="Addres" id="B5C9CD74-C077-2403-BD7A-AD463BEE2878">
+<ColumnProxy name="ADDRESS" id="B5C9CD74-C077-2403-BD7A-AD463BEE2878">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="FirstName" id="BC6DF3D8-C06D-532C-19B2-8053D0C65D48">
+<ColumnProxy name="FIRST_NAME" id="BC6DF3D8-C06D-532C-19B2-8053D0C65D48">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="PhoneNmber" id="C89CFBD6-7198-037F-162F-43C859DABEAD">
+<ColumnProxy name="PHONE" id="C89CFBD6-7198-037F-162F-43C859DABEAD">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="LastName" id="CE111064-679E-D1E2-531C-E0514F54D51C">
+<ColumnProxy name="LAST_NAME" id="CE111064-679E-D1E2-531C-E0514F54D51C">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="Id" id="CFF32371-7ECC-335B-793B-C6113146C411">
+<ColumnProxy name="ID" id="CFF32371-7ECC-335B-793B-C6113146C411">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 <autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
 <notnullConstraintnameChanged>true</notnullConstraintnameChanged>
 </ColumnProxy>
-<ColumnProxy name="Email" id="F08DE28B-343B-7135-CC21-A2AF78EDE8D2">
+<ColumnProxy name="STATUS_ID" id="E7FB1E7C-B218-7C57-DD00-28FAB74AC3B6">
+<createdBy>user</createdBy>
+<createdTime>2020-01-07 19:32:53 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMAIL" id="F08DE28B-343B-7135-CC21-A2AF78EDE8D2">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
 <foreignKeys>
-<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="GUEST_DOCUMENT_TYPE_FK" id="009A8698-9E71-900F-AEBD-8A3EAEA73AB1">
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="GST_DCMNT_TP_FK" id="009A8698-9E71-900F-AEBD-8A3EAEA73AB1">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:42:34 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="GUEST_STATUS_FK" id="27D71756-74D4-7318-A3A5-CEF832BDA4D1">
+<createdBy>user</createdBy>
+<createdTime>2020-01-07 19:32:53 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ForeignKey>
 </foreignKeys>

@@ -106,24 +106,26 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="STATUS" id="A79BD9F4-6C70-C42E-A319-80753F60DDC8">
-<createdBy>Piotr</createdBy>
-<createdTime>2020-01-04 19:40:51 UTC</createdTime>
+<Column name="STATUS_ID" id="E7FB1E7C-B218-7C57-DD00-28FAB74AC3B6">
+<createdBy>user</createdBy>
+<createdTime>2020-01-07 19:32:53 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
-<constraintName>CK_GUEST_STATUS</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<defaultValue>1</defaultValue>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <listOfRanges>
 <rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
 <beginValue>1</beginValue>
 <endValue>5</endValue>
-<description>Valid status values</description>
+<description>client status</description>
 </rangeDef>
 </listOfRanges>
+<associations>
+<colAssociation fkAssociation="ED98D078-F368-9B42-E9E6-015767E86DC9" referredColumn="7D8F5951-F4D0-9E04-B2E4-420624C1F827"/>
+</associations>
 </Column>
 <Column name="RESERVATION_ID" id="B41558AD-4847-C953-6B47-83BBEDBAA5E3">
 <createdBy>Piotr</createdBy>
@@ -171,6 +173,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="A17F9112-9335-B8BF-F4CE-16D242313EF9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="27D71756-74D4-7318-A3A5-CEF832BDA4D1" name="GUEST_STATUS_FK">
+<createdBy>user</createdBy>
+<createdTime>2020-01-07 19:32:53 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E7FB1E7C-B218-7C57-DD00-28FAB74AC3B6"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
