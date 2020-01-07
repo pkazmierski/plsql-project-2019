@@ -15,9 +15,14 @@
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="NATIONALITY" id="607CB136-6533-A566-AFCD-7039B4B2332A">
+<ColumnProxy name="COUNTRY" id="607CB136-6533-A566-AFCD-7039B4B2332A">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BIRTH_DATE" id="904C1FB0-10A1-681F-06F4-28762A64CCEC">
+<createdBy>user</createdBy>
+<createdTime>2020-01-07 20:40:41 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="DOCUMENT_TYPE_ID" id="A17F9112-9335-B8BF-F4CE-16D242313EF9">
@@ -26,11 +31,6 @@
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="RESERVATION_ID" id="B41558AD-4847-C953-6B47-83BBEDBAA5E3">
-<createdBy>Piotr</createdBy>
-<createdTime>2020-01-04 19:40:51 UTC</createdTime>
-<ownerDesignName>hotel_design</ownerDesignName>
-</ColumnProxy>
-<ColumnProxy name="ADDRESS" id="B5C9CD74-C077-2403-BD7A-AD463BEE2878">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -56,6 +56,11 @@
 <ownerDesignName>hotel_design</ownerDesignName>
 <autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
 <notnullConstraintnameChanged>true</notnullConstraintnameChanged>
+</ColumnProxy>
+<ColumnProxy name="CITY" id="E070BB9C-5EDB-F0B3-2609-9A00ED6BCA2E">
+<createdBy>user</createdBy>
+<createdTime>2020-01-07 21:15:46 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="STATUS_ID" id="E7FB1E7C-B218-7C57-DD00-28FAB74AC3B6">
 <createdBy>user</createdBy>

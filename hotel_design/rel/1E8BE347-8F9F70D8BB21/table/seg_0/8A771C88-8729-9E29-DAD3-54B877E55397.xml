@@ -49,17 +49,6 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="ADDRESS" id="B5C9CD74-C077-2403-BD7A-AD463BEE2878">
-<createdBy>Piotr</createdBy>
-<createdTime>2020-01-04 19:40:51 UTC</createdTime>
-<ownerDesignName>hotel_design</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>200</dataTypeSize>
-<ownDataTypeParameters>200,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="PHONE" id="C89CFBD6-7198-037F-162F-43C859DABEAD">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
@@ -84,6 +73,29 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="CITY" id="E070BB9C-5EDB-F0B3-2609-9A00ED6BCA2E">
+<createdBy>user</createdBy>
+<createdTime>2020-01-07 21:15:46 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COUNTRY" id="607CB136-6533-A566-AFCD-7039B4B2332A">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:40:51 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="DOCUMENT_ID" id="4CCC6235-A30D-8A41-C2E6-C8192E4D5E10">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
@@ -95,37 +107,16 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NATIONALITY" id="607CB136-6533-A566-AFCD-7039B4B2332A">
-<createdBy>Piotr</createdBy>
-<createdTime>2020-01-04 19:40:51 UTC</createdTime>
-<ownerDesignName>hotel_design</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="STATUS_ID" id="E7FB1E7C-B218-7C57-DD00-28FAB74AC3B6">
+<Column name="BIRTH_DATE" id="904C1FB0-10A1-681F-06F4-28762A64CCEC">
 <createdBy>user</createdBy>
-<createdTime>2020-01-07 19:32:53 UTC</createdTime>
+<createdTime>2020-01-07 20:40:41 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
-<listOfRanges>
-<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
-<beginValue>1</beginValue>
-<endValue>5</endValue>
-<description>client status</description>
-</rangeDef>
-</listOfRanges>
-<associations>
-<colAssociation fkAssociation="ED98D078-F368-9B42-E9E6-015767E86DC9" referredColumn="7D8F5951-F4D0-9E04-B2E4-420624C1F827"/>
-</associations>
 </Column>
 <Column name="RESERVATION_ID" id="B41558AD-4847-C953-6B47-83BBEDBAA5E3">
 <createdBy>Piotr</createdBy>
@@ -150,6 +141,27 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="AF58F68B-4FB4-21F8-615B-8E27B93AFB60" referredColumn="9C9DBEA5-E4A2-91AF-2733-A6A76E6816E7"/>
+</associations>
+</Column>
+<Column name="STATUS_ID" id="E7FB1E7C-B218-7C57-DD00-28FAB74AC3B6">
+<createdBy>user</createdBy>
+<createdTime>2020-01-07 19:32:53 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+<description>client status</description>
+</rangeDef>
+</listOfRanges>
+<associations>
+<colAssociation fkAssociation="ED98D078-F368-9B42-E9E6-015767E86DC9" referredColumn="7D8F5951-F4D0-9E04-B2E4-420624C1F827"/>
 </associations>
 </Column>
 </columns>
