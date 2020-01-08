@@ -73,19 +73,7 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CITY" id="E070BB9C-5EDB-F0B3-2609-9A00ED6BCA2E">
-<createdBy>user</createdBy>
-<createdTime>2020-01-07 21:15:46 UTC</createdTime>
-<ownerDesignName>hotel_design</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="COUNTRY" id="607CB136-6533-A566-AFCD-7039B4B2332A">
+<Column name="NATIONALITY" id="607CB136-6533-A566-AFCD-7039B4B2332A">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -111,7 +99,6 @@
 <createdBy>user</createdBy>
 <createdTime>2020-01-07 20:40:41 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -153,13 +140,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
-<listOfRanges>
-<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
-<beginValue>1</beginValue>
-<endValue>5</endValue>
-<description>client status</description>
-</rangeDef>
-</listOfRanges>
 <associations>
 <colAssociation fkAssociation="ED98D078-F368-9B42-E9E6-015767E86DC9" referredColumn="7D8F5951-F4D0-9E04-B2E4-420624C1F827"/>
 </associations>
@@ -187,7 +167,7 @@
 <colUsage columnID="A17F9112-9335-B8BF-F4CE-16D242313EF9"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="27D71756-74D4-7318-A3A5-CEF832BDA4D1" name="GUEST_STATUS_FK">
+<ind_PK_UK id="27D71756-74D4-7318-A3A5-CEF832BDA4D1" name="GST_STS_FK">
 <createdBy>user</createdBy>
 <createdTime>2020-01-07 19:32:53 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>

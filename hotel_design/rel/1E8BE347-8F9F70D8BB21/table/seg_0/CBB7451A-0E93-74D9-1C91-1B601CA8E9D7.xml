@@ -22,7 +22,6 @@
 <createdBy>user</createdBy>
 <createdTime>2020-01-07 19:29:42 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>

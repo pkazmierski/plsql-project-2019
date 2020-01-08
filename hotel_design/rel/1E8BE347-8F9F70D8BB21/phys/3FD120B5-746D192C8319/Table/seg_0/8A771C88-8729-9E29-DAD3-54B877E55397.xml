@@ -15,7 +15,7 @@
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="COUNTRY" id="607CB136-6533-A566-AFCD-7039B4B2332A">
+<ColumnProxy name="NATIONALITY" id="607CB136-6533-A566-AFCD-7039B4B2332A">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 19:40:51 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
@@ -57,11 +57,6 @@
 <autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
 <notnullConstraintnameChanged>true</notnullConstraintnameChanged>
 </ColumnProxy>
-<ColumnProxy name="CITY" id="E070BB9C-5EDB-F0B3-2609-9A00ED6BCA2E">
-<createdBy>user</createdBy>
-<createdTime>2020-01-07 21:15:46 UTC</createdTime>
-<ownerDesignName>hotel_design</ownerDesignName>
-</ColumnProxy>
 <ColumnProxy name="STATUS_ID" id="E7FB1E7C-B218-7C57-DD00-28FAB74AC3B6">
 <createdBy>user</createdBy>
 <createdTime>2020-01-07 19:32:53 UTC</createdTime>
@@ -79,7 +74,7 @@
 <createdTime>2020-01-04 19:42:34 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 </ForeignKey>
-<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="GUEST_STATUS_FK" id="27D71756-74D4-7318-A3A5-CEF832BDA4D1">
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="GST_STS_FK" id="27D71756-74D4-7318-A3A5-CEF832BDA4D1">
 <createdBy>user</createdBy>
 <createdTime>2020-01-07 19:32:53 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
