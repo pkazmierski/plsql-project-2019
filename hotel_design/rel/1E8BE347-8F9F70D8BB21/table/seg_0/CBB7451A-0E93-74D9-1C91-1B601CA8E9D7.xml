@@ -1,9 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CBB7451A-0E93-74D9-1C91-1B601CA8E9D7" name="STATUS">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CBB7451A-0E93-74D9-1C91-1B601CA8E9D7" name="GUEST_STATUS">
 <createdBy>user</createdBy>
 <createdTime>2020-01-07 19:28:19 UTC</createdTime>
 <ownerDesignName>hotel_design</ownerDesignName>
 <ordsAlias>table_12</ordsAlias>
+<abbreviation>GST_STS</abbreviation>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -16,7 +17,10 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
 </Column>
 <Column name="STATUS_NAME" id="79E5FB81-D4E9-E613-0B28-3207A38F851F">
 <createdBy>user</createdBy>
