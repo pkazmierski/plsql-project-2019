@@ -53,6 +53,20 @@
 <colAssociation fkAssociation="BB59E0CA-6D8F-0D4A-9CEF-8D3CEA3B312C" referredColumn="EF64E959-C3B3-B76B-89A8-4FF590701A1A"/>
 </associations>
 </Column>
+<Column name="RESERVATION_ID" id="08BAC3CC-351D-6D5D-4598-AFB126380011">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 11:09:37 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1E2B7B7C-6226-C24A-39C5-483AB392E796" referredColumn="4B265336-8AEE-573A-1E64-D32F9D7E31AD"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="E6F6EF23-DAF8-02A2-6507-AF4715A576D9" name="PAYMENT_PK">
@@ -74,6 +88,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="4270E0EA-41A1-B160-DE11-8513C8272F86"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="17508FC6-DF49-BC7A-565B-AD038180A1EF" name="PYMNT_RSRV_FK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 11:09:37 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="08BAC3CC-351D-6D5D-4598-AFB126380011"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
