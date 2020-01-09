@@ -1,6 +1,7 @@
 -- QUERIES
 
--- 1. Kto ma najwięcej oplacaonych rezerwacji
+-- 1. Kto ma najwięcej oplaconych rezerwacji
+
 SELECT
     COUNT(g.id),
     g.first_name,
@@ -75,12 +76,14 @@ FROM
 GROUP BY "Floor";
 
 -- 6. Ile jednej nocy można maksymalnie przenocować gości
+
 SELECT
     SUM(max_tenants)
 FROM
     room;
 
 -- 7. Ile jest rezerwacji dzisiejszego dnia
+
 SELECT
     COUNT(*)
 FROM
@@ -89,6 +92,7 @@ WHERE
     to_char(sysdate, 'yyyy/mm/dd') BETWEEN r.checkin_date AND r.checkout_date;
 
 -- 8. Najpopularnieszy typ platnosci
+
 SELECT
     pt.name,
     COUNT(p.payment_type_id)
@@ -103,6 +107,7 @@ ORDER BY
 FETCH FIRST 1 ROWS ONLY;
 
 -- 9. Najczęściej rezerwowany pokój
+
 SELECT
     r.id,
     COUNT(gir.reservation_id)
@@ -120,6 +125,7 @@ FETCH FIRST 1 ROWS ONLY;
 
 
 -- 10. Pokoje zarezerwowane przez zlotych klientow
+
 SELECT
     g.first_name,
     g.last_name,
@@ -148,29 +154,25 @@ GROUP BY
 
 -- PROCEDURES
 
--- dodaj klienta
-CREATE OR REPLACE PROCEDURE add_client(p_first_name guest.first_name%TYPE,
-p_last_name guest.last_name%TYPE,
-p_phone guest.phone%TYPE,
-p_email guest.email%TYPE,
-p_nationality guest.nationality%TYPE,
-p_document_id guest.document_id%TYPE,
-p_birth_date guest.birth_date%TYPE,
-p_reservation_id guest.reservation_id%TYPE,
-p_document_type_id guest.document_type_id%TYPE,
-p_status_id guest.status_id%TYPE)
+-- dodaj gościa
+CREATE OR REPLACE PROCEDURE add_guest(
+    p_first_name guest.first_name%TYPE,
+    p_last_name guest.last_name%TYPE,
+    p_phone guest.phone%TYPE,
+    p_email guest.email%TYPE,
+    p_nationality guest.nationality%TYPE,
+    p_document_id guest.document_id%TYPE,
+    p_birth_date guest.birth_date%TYPE,
+    p_document_type_id guest.document_type_id%TYPE,
+    p_status_id guest.status_id%TYPE)
 AS
 BEGIN
-INSERT INTO TABLE guest(first_name, last_name, phone, email, nationality, document_id, birth_date, reservation_id,
-document_type_id, status_id)
-VALUES (p_first_name, p_last_name, p_phone, p_email, p_nationality, p_document_id, p_birth_date,
-p_reservation_id, p_document_type_id, p_status_id);
-END;
+    INSERT INTO guest(first_name, last_name, phone, email, nationality, document_id, birth_date, document_type_id, status_id)
+    VALUES (p_first_name, p_last_name, p_phone, p_email, p_nationality, p_document_id, p_birth_date, p_document_type_id, p_status_id);
+END add_guest;
 
 
-
-
---Procedura dodaj płatność
+-- dodaj płatność
 CREATE OR REPLACE PROCEDURE add_payment(p_amount payment.amount%TYPE, p_payment_type_id payment.payment_type_id%TYPE)
 AS
 BEGIN
@@ -181,11 +183,16 @@ END;
 CREATE OR REPLACE PROCEDURE check_in(p_reservation_id reservation.id%TYPE)
 AS
 BEGIN
-    UPDATE reservation SET reservation_status_id = 4
+    UPDATE reservation
+    SET reservation_status_id = 4
     WHERE id = p_reservation_id;
 END;
 
+
+
+
 -- Funkcje
+
 -- czy rezerwacja zostala oplacona
 CREATE OR REPLACE FUNCTION is_paid(p_reservation_id reservation.id%TYPE)
 RETURN boolean
@@ -204,6 +211,7 @@ BEGIN
     END IF;
 END;
 
+-- cena za pokoj
 CREATE OR REPLACE FUNCTION room_price (
     p_guest_id guest.id%TYPE, p_room_id room.id%TYPE
 ) RETURN NUMBER AS
@@ -242,25 +250,34 @@ BEGIN
 END;
 
 -- W jakim sezonie była dana rezerwacja
-CREATE OR REPLACE FUNCTION check_season_for_reservation(p_reservation_id reservation.id%TYPE)
+
+CREATE OR REPLACE FUNCTION season_for_reservation(p_reservation_id reservation.id%TYPE)
 RETURN season_pricing.id%TYPE
 AS
 v_reservation_date reservation.checkin_date%TYPE;
-CURSOR season_cursor IS SELECT * FROM season_pricing;
+CURSOR season_cursor IS
+    SELECT *
+    FROM season_pricing;
 BEGIN
     SELECT r.checkin_date INTO v_reservation_date
-    FROM reservation r WHERE r.id = p_reservation_id;
+    FROM reservation r
+    WHERE r.id = p_reservation_id;
+    
     FOR season IN season_cursor 
     LOOP
         IF v_reservation_date BETWEEN season.start_date AND season.end_date THEN
-        RETURN season.id;
-        ELSE RETURN NULL;
+            RETURN season.id;            
         END IF;
     END LOOP;
     
+    RETURN NULL;
 END;
 
+
+
+
 -- Triggery
+
 -- Czy guest ma przynajmniej 1 formę kontaktu - create/update
 CREATE OR REPLACE TRIGGER check_contact_data
 BEFORE INSERT ON guest
