@@ -144,3 +144,96 @@ FROM
     reservation
 GROUP BY
     room_id;
+	
+
+-- PROCEDURES
+
+-- dodaj klienta
+CREATE OR REPLACE PROCEDURE add_client(p_first_name guest.first_name%TYPE,
+p_last_name guest.last_name%TYPE,
+p_phone guest.phone%TYPE,
+p_email guest.email%TYPE,
+p_nationality guest.nationality%TYPE,
+p_document_id guest.document_id%TYPE,
+p_birth_date guest.birth_date%TYPE,
+p_reservation_id guest.reservation_id%TYPE,
+p_document_type_id guest.document_type_id%TYPE,
+p_status_id guest.status_id%TYPE)
+AS
+BEGIN
+INSERT INTO TABLE guest(first_name, last_name, phone, email, nationality, document_id, birth_date, reservation_id,
+document_type_id, status_id)
+VALUES (p_first_name, p_last_name, p_phone, p_email, p_nationality, p_document_id, p_birth_date,
+p_reservation_id, p_document_type_id, p_status_id);
+END;
+
+
+
+
+--Procedura dodaj płatność
+CREATE OR REPLACE PROCEDURE add_payment(p_amount payment.amount%TYPE, p_payment_type_id payment.payment_type_id%TYPE)
+AS
+BEGIN
+    INSERT INTO PAYMENT(amount, payment_type_id) VALUES(p_amount, p_payment_type_id);
+END;
+
+-- check-in - zmiana rezerwacji na active
+CREATE OR REPLACE PROCEDURE check_in(p_reservation_id reservation.id%TYPE)
+AS
+BEGIN
+    UPDATE reservation SET reservation_status_id = 4
+    WHERE id = p_reservation_id;
+END;
+
+-- Funkcje
+  -- czy rezerwacja zostala oplacona
+  --sprawdzenie w funkcji
+CREATE OR REPLACE FUNCTION is_paid(p_reservation_id reservation.id%TYPE)
+RETURN boolean
+AS
+ v_reservation_status_name reservation_status.NAME%TYPE;
+BEGIN
+
+    SELECT rs.name INTO v_reservation_status_name FROM reservation r JOIN reservation_status rs ON r.reservation_status_id = r.id
+    WHERE r.id = p_reservation_id;
+	IF v_reservation_status_name = 'complete' THEN
+    RETURN TRUE;
+    ELSE RETURN FALSE;
+    END IF;
+END;
+
+CREATE OR REPLACE FUNCTION room_price_discount(p_guest_id guest.id%TYPE, p_room_id room.id%TYPE)
+RETURN NUMBER
+AS
+    v_new_price room_type.base_price%TYPE;
+    v_base_price room_type.base_price%TYPE;
+    v_discount guest_status.multiplier%TYPE;
+BEGIN
+     
+    SELECT rt.base_price INTO v_base_price FROM room r LEFT JOIN room_type rt ON r.room_type_id = rt.id
+    WHERE r.id = p_room_id;
+    
+    SELECT gs.multiplier INTO v_discount FROM guest g LEFT JOIN guest_status gs ON g.status_id = gs.id
+    WHERE g.id = p_guest_id;
+    
+    v_new_price := v_base_price * v_discount;
+    RETURN TRUNC(v_new_price, 2);
+    
+END;
+
+-- Triggery
+-- Czy guest ma przynajmniej 1 formę kontaktu - create/update
+CREATE OR REPLACE TRIGGER check_contact_data
+BEFORE INSERT ON guest
+FOR EACH ROW
+DECLARE
+e_no_contact_provided EXCEPTION;
+BEGIN
+    IF :NEW.email = NULL AND :NEW.phone = NULL THEN
+    RAISE e_no_contact_provided;
+    END IF;
+    EXCEPTION WHEN e_no_contact_provided THEN
+    dbms_output.put_line('At least one method of contact per guest must be provided');
+END;
+
+
