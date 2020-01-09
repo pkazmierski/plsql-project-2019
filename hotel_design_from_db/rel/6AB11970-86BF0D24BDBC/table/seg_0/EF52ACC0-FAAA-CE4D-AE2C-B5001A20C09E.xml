@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EF52ACC0-FAAA-CE4D-AE2C-B5001A20C09E" schemaObject="FA502B5E-7493-D178-5B2B-5157562A8AFC" name="DOCUMENT_TYPE">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>DOCUMENT_TYPE</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:38 UTC</createdTime>
+<commentInRDBMS><![CDATA[Defines possible document types.]]></commentInRDBMS>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="7A3941EE-F622-EE70-CEC2-29FAFA8E0CA0">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>DOCUMENT_TYPE</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCache>0</autoIncrementCache>
+</Column>
+<Column name="NAME" id="CF7E944B-5654-B02A-CA6F-CA83C30FC472">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>DOCUMENT_TYPE</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F132E16E-DA4E-F62A-62C3-507AEFA931B2" name="DOCUMENT_TYPE_PK">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>DOCUMENT_TYPE_PK</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:40 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7A3941EE-F622-EE70-CEC2-29FAFA8E0CA0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C32BFB3B-B959-74B2-90FC-0F6BBA8D5A5A" schemaObject="FA502B5E-7493-D178-5B2B-5157562A8AFC" name="DOCUMENT_TYPE_PK">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>DOCUMENT_TYPE_PK</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7A3941EE-F622-EE70-CEC2-29FAFA8E0CA0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

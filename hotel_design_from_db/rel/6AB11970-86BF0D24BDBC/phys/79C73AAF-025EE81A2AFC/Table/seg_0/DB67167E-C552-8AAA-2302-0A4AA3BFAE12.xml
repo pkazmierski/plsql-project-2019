@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="RESERVATION_STATUS" directorySegmentName="seg_0" id="DB67167E-C552-8AAA-2302-0A4AA3BFAE12">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:38 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<schemaObject>FA502B5E-7493-D178-5B2B-5157562A8AFC</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>209A6009-AD97-7695-1487-96820D2254AC</segment>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID" id="3E11CAF3-EBD7-BB73-2BBB-216465F3EF66">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="C9889EEC-8000-8266-397C-9701332EEEDE">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="RESERVATION_STATUS_PK" id="9EB20885-54AD-7C27-01D4-344EA6A412C8">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<schemaObject>FA502B5E-7493-D178-5B2B-5157562A8AFC</schemaObject>
+<segment>53D2E247-AB55-D1CC-5083-8B13349E227F</segment>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="RESERVATION_STATUS_PK" id="603779EA-7C1B-153A-CE05-2861D46A6946">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:40 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<segment>53D2E247-AB55-D1CC-5083-8B13349E227F</segment>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+<existingIndex>9EB20885-54AD-7C27-01D4-344EA6A412C8</existingIndex>
+<indexSegment>53D2E247-AB55-D1CC-5083-8B13349E227F</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

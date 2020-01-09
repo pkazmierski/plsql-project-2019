@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="87FA3E75-CB4A-CAEA-721B-A94DEB3C059A" schemaObject="FA502B5E-7493-D178-5B2B-5157562A8AFC" name="GUEST_STATUS">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>GUEST_STATUS</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:38 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="E9DA1A7E-2653-53EF-8CDD-5CA788A70B55">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>GUEST_STATUS</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementCache>0</autoIncrementCache>
+</Column>
+<Column name="STATUS_NAME" id="0EA867ED-CF96-E3EF-3DC9-143EBA0D3F2C">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>GUEST_STATUS</sourceObjSchema>
+<sourceObjName>STATUS_NAME</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MULTIPLIER" id="48367E6D-C6EA-2627-3DD2-6D80CD95BD56">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>GUEST_STATUS</sourceObjSchema>
+<sourceObjName>MULTIPLIER</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,3,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AFDDB002-9F61-8A34-EC4B-420ECFA17043" name="STATUS_PK">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>STATUS_PK</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:40 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E9DA1A7E-2653-53EF-8CDD-5CA788A70B55"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9448EFBC-6303-CECD-8BF2-53196CC9884E" schemaObject="FA502B5E-7493-D178-5B2B-5157562A8AFC" name="STATUS_PK">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>STATUS_PK</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E9DA1A7E-2653-53EF-8CDD-5CA788A70B55"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

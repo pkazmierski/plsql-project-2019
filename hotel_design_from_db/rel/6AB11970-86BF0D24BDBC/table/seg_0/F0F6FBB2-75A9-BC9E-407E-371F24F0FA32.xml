@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F0F6FBB2-75A9-BC9E-407E-371F24F0FA32" schemaObject="FA502B5E-7493-D178-5B2B-5157562A8AFC" name="ROOM">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>ROOM</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:38 UTC</createdTime>
+<commentInRDBMS><![CDATA[Stores information about rooms.]]></commentInRDBMS>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="D7546821-44B5-BF4D-4D4A-D6B9BE8E3797">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>ROOM</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MAX_TENANTS" id="89C521E9-5FF2-9B05-B827-2C21434943DE">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>ROOM</sourceObjSchema>
+<sourceObjName>MAX_TENANTS</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ROOM_TYPE_ID" id="4EDDEB41-4307-F45C-8590-BB5A54319B01">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>ROOM</sourceObjSchema>
+<sourceObjName>ROOM_TYPE_ID</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C1E3F670-B166-A0A5-1E66-534F12CEEDDA" referredColumn="E82DF6DF-AB69-2688-E14A-288A8C95A7D1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="608CD2CC-10BB-D1C7-53F9-11BA307A56DB" name="ROOM_PK">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>ROOM_PK</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:40 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7546821-44B5-BF4D-4D4A-D6B9BE8E3797"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4F8558BB-B8C0-755B-6682-0F5B53E250C8" schemaObject="FA502B5E-7493-D178-5B2B-5157562A8AFC" name="ROOM_PK">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>ROOM_PK</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7546821-44B5-BF4D-4D4A-D6B9BE8E3797"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DB6A454F-315D-1CB5-979A-FC85974C322B" name="RM_RM_TP_FK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:41 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4EDDEB41-4307-F45C-8590-BB5A54319B01"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
