@@ -6,4 +6,14 @@
 <createdTime>2020-01-09 13:47:37 UTC</createdTime>
 <ownerDesignName>hotel_design_from_db</ownerDesignName>
 <schemaObject>FA502B5E-7493-D178-5B2B-5157562A8AFC</schemaObject>
+<defTableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</defTableSpace>
+<privileges>SELECT ANY DICTIONARY</privileges>
+<quotaItems>
+<QuotaItem class="oracle.dbtools.crest.model.design.storage.oracle.v10g.QuotaItemOraclev10g" name="QuotaItem1" id="3C78AF6D-7C44-2B1B-02BC-B70A28037F14">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 14:19:59 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+</QuotaItem>
+</quotaItems>
 </UserOraclev10g>

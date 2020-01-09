@@ -6,6 +6,13 @@
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-09 13:47:38 UTC</createdTime>
 <ownerDesignName>hotel_design_from_db</ownerDesignName>
+<dsInitialExtent>65536</dsInitialExtent>
+<dsMaxExtents>2147483645</dsMaxExtents>
 <emUniformSize>0</emUniformSize>
 <extentManagement>LOCAL</extentManagement>
+<minExtLen>65536</minExtLen>
+<dsCompression>NOCOMPRESS</dsCompression>
+<encrypt>YES</encrypt>
+<fileType>BIGFILE</fileType>
+<inMemory>NO</inMemory>
 </TableSpaceOraclev10g>

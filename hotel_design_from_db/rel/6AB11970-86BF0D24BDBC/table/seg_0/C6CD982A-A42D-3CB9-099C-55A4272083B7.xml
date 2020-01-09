@@ -122,6 +122,25 @@
 <ownDataTypeParameters>,12,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="PAYER_ID" id="02741CAF-6BA3-B8FD-01E1-90C87647FCEE">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>RESERVATION</sourceObjSchema>
+<sourceObjName>PAYER_ID</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 14:19:59 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<importedID>9C6D93F0-3C6F-E47D-944E-631B220FC2AA</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6FF0FFDA-8C54-D49F-9E17-F227A4FB2E2E" referredColumn="44672E43-B00F-D40F-0AAE-77304328C929"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="3E59A45B-BDE1-6A87-5F93-C04CDF8D0BE1" name="RESERVATION_PK">
@@ -169,6 +188,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="4CE20664-FE40-9729-2646-DCD235412D76"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B1BC38AE-E2C2-1B95-DC2E-81AC0169B233" name="RSRV_GST_FK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 14:19:59 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="02741CAF-6BA3-B8FD-01E1-90C87647FCEE"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

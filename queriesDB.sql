@@ -186,40 +186,54 @@ BEGIN
 END;
 
 -- Funkcje
-  -- czy rezerwacja zostala oplacona
-  --sprawdzenie w funkcji
+-- czy rezerwacja zostala oplacona
 CREATE OR REPLACE FUNCTION is_paid(p_reservation_id reservation.id%TYPE)
 RETURN boolean
 AS
  v_reservation_status_name reservation_status.NAME%TYPE;
 BEGIN
-
-    SELECT rs.name INTO v_reservation_status_name FROM reservation r JOIN reservation_status rs ON r.reservation_status_id = r.id
+    SELECT rs.name INTO v_reservation_status_name
+    FROM reservation r
+    JOIN reservation_status rs ON r.reservation_status_id = rs.id
     WHERE r.id = p_reservation_id;
-	IF v_reservation_status_name = 'complete' THEN
-    RETURN TRUE;
-    ELSE RETURN FALSE;
+    
+	IF v_reservation_status_name = 'confirmed' THEN
+        RETURN TRUE;
+    ELSE
+        RETURN FALSE;
     END IF;
 END;
 
-CREATE OR REPLACE FUNCTION room_price_discount(p_guest_id guest.id%TYPE, p_room_id room.id%TYPE)
+
+CREATE OR REPLACE FUNCTION room_price(p_guest_id guest.id%TYPE, p_room_id room.id%TYPE)
 RETURN NUMBER
 AS
-    v_new_price room_type.base_price%TYPE;
+    v_calculated_price room_type.base_price%TYPE;
     v_base_price room_type.base_price%TYPE;
-    v_discount guest_status.multiplier%TYPE;
+    v_season_multiplier season_pricing.multiplier%TYPE;
+    v_guest_status_multiplier guest_status.multiplier%TYPE;
 BEGIN
-     
-    SELECT rt.base_price INTO v_base_price FROM room r LEFT JOIN room_type rt ON r.room_type_id = rt.id
+    SELECT rt.base_price INTO v_base_price
+    FROM room r JOIN room_type rt ON r.room_type_id = rt.id
     WHERE r.id = p_room_id;
     
-    SELECT gs.multiplier INTO v_discount FROM guest g LEFT JOIN guest_status gs ON g.status_id = gs.id
+    SELECT gs.multiplier INTO v_guest_status_multiplier
+    FROM guest g LEFT JOIN guest_status gs ON g.status_id = gs.id
     WHERE g.id = p_guest_id;
     
-    v_new_price := v_base_price * v_discount;
-    RETURN TRUNC(v_new_price, 2);
+    SELECT multiplier into v_season_multiplier
+    from season_pricing
+    where SYSDATE >= start_date AND SYSDATE <= end_date;
+    IF SQL%NOTFOUND THEN
+        v_season_multiplier := 1.0;
+    END IF;
     
+    RETURN TRUNC(v_base_price * v_guest_status_multiplier * v_season_multiplier, 2);
 END;
+
+    SELECT rt.base_price
+    FROM room r JOIN room_type rt ON r.room_type_id = rt.id
+    WHERE r.id = 101;
 
 -- Triggery
 -- Czy guest ma przynajmniej 1 formę kontaktu - create/update
@@ -237,3 +251,8 @@ BEGIN
 END;
 
 
+--Testy
+SET SERVEROUTPUT ON;
+BEGIN
+    dbms_output.put_line(room_price(1, 101));
+END;

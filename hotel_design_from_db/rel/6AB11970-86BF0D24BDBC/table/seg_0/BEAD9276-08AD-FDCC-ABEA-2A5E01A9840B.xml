@@ -67,7 +67,6 @@
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-09 13:47:39 UTC</createdTime>
 <ownerDesignName>hotel_design_from_db</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>

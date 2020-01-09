@@ -5,4 +5,9 @@
 <ownerDesignName>hotel_design_from_db</ownerDesignName>
 <capitalNames>false</capitalNames>
 <designId>229F5D34-5F9E-B392-8B0D-A0A82ADEB5AA</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="4AEEE10E-BCF9-CF14-0EB7-38A00A47514A">
+<designStoragePath>C:\Users\Piotr\Briefcase\studia\5sem\Database Programming\projekt\plsql-github</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
 </OSDM_Design>
