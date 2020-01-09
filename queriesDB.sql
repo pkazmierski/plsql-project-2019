@@ -273,6 +273,38 @@ BEGIN
     RETURN NULL;
 END;
 
+-- Zwracanie całych rzędów pokoi, które są wolne i mają podane parametry (filtrowanie, niech będą defaulty albo jakieś inne ogarnięcie przypadków, gdy nie ma podanego danego parametru)
+CREATE OR REPLACE FUNCTION return_rooms(p_date_from reservation.checkin_date%TYPE DEFAULT TO_CHAR(SYSDATE),
+p_date_to reservation.checkout_date%TYPE DEFAULT TO_CHAR(SYSDATE+7), p_room_type room_type.name%TYPE DEFAULT 'Single')
+RETURN SYS_REFCURSOR
+AS
+my_cursor SYS_REFCURSOR;
+BEGIN
+  OPEN my_cursor FOR SELECT r.id, rt.name, rt.base_price FROM reservation res LEFT JOIN room r ON res.room_id = r.id
+LEFT JOIN room_type rt ON rt.id = r.room_type_id
+WHERE res.checkin_date >= p_date_from AND res.checkout_date <= p_date_to
+AND rt.name = p_room_type AND r.id NOT IN (SELECT r.id FROM reservation res LEFT JOIN room r ON res.room_id = r.id
+LEFT JOIN room_type rt ON rt.id = r.room_type_id
+WHERE res.checkin_date >= p_date_from AND res.checkout_date <= p_date_to
+AND rt.name = p_room_type);
+RETURN my_cursor;
+END;
+
+
+
+-- Ile z wymaganej kwoty rezerwacji zostało już wpłacone/ile do zapłacenia
+CREATE OR REPLACE FUNCTION yet_to_pay(p_reservation_id reservation.id%TYPE)
+RETURN NUMBER
+AS
+v_left_to_pay reservation.price%TYPE;
+BEGIN
+    SELECT p.amount - res.price INTO v_left_to_pay
+    FROM reservation res INNER JOIN payment p ON p.reservation_id = res.id;
+    RETURN TRUNC(v_left_to_pay,2);
+END;
+
+
+
 
 
 
@@ -303,6 +335,45 @@ BEGIN
     EXCEPTION WHEN e_no_update_allowed THEN
     dbms_output.put_line('Updating PAYMENT table is not allowed');
 END;
+
+CREATE OR REPLACE TRIGGER check_new_season
+BEFORE INSERT ON season_pricing FOR EACH ROW
+DECLARE
+v_counter NUMBER;
+e_no_season_found EXCEPTION;
+BEGIN
+    SELECT COUNT(*) INTO v_counter FROM season_pricing sp
+    WHERE :NEW.start_date >= sp.start_date AND :NEW.end_date <= sp.end_date;
+    IF v_counter >= 1 THEN 
+        RAISE e_no_season_found;
+    END IF;
+    EXCEPTION WHEN e_no_season_found THEN
+    dbms_output.put_line('Cannot add a season that interferes with any other');
+	
+
+-- Widoki
+-- widok Wolne pokoje (aktualnie)
+CREATE OR REPLACE VIEW free_rooms AS
+SELECT r.id, rt.name, rt.base_price FROM reservation res LEFT JOIN room r ON res.room_id = r.id
+LEFT JOIN room_type rt ON rt.id = r.room_type_id
+WHERE res.checkin_date >= TO_CHAR(SYSDATE) AND res.checkout_date <= TO_CHAR(SYSDATE)
+AND r.id NOT IN (SELECT r.id FROM reservation res LEFT JOIN room r ON res.room_id = r.id
+WHERE res.checkin_date >= TO_CHAR(SYSDATE) AND res.checkout_date <= TO_CHAR(SYSDATE));
+
+
+
+-- kto w danym dniu nie ma zapłaty za hotel
+
+CREATE OR REPLACE VIEW not_paid_today
+AS
+SELECT g.first_name, g.last_name, res.price - p.amount AS "Left to pay" FROM reservation res LEFT JOIN reservation_status rs
+ON res.reservation_status_id = rs.id
+LEFT JOIN guests_in_reservation gir ON gir.reservation_id = res.id
+LEFT JOIN guest g ON g.id = gir.guest_id
+LEFT JOIN payment p ON res.id = p.reservation_id
+WHERE res.checkin_date >= TO_CHAR(SYSDATE) AND res.checkout_date <= TO_CHAR(SYSDATE)
+AND rs.name = 'unpaid';
+
 
 --Testy
 SET SERVEROUTPUT ON;
