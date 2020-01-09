@@ -204,7 +204,6 @@ BEGIN
     END IF;
 END;
 
-
 CREATE OR REPLACE FUNCTION room_price(p_guest_id guest.id%TYPE, p_room_id room.id%TYPE)
 RETURN NUMBER
 AS
@@ -231,9 +230,24 @@ BEGIN
     RETURN TRUNC(v_base_price * v_guest_status_multiplier * v_season_multiplier, 2);
 END;
 
-    SELECT rt.base_price
-    FROM room r JOIN room_type rt ON r.room_type_id = rt.id
-    WHERE r.id = 101;
+-- W jakim sezonie była dana rezerwacja
+CREATE OR REPLACE FUNCTION check_season_for_reservation(p_reservation_id reservation.id%TYPE)
+RETURN season_pricing.id%TYPE
+AS
+v_reservation_date reservation.checkin_date%TYPE;
+CURSOR season_cursor IS SELECT * FROM season_pricing;
+BEGIN
+    SELECT r.checkin_date INTO v_reservation_date
+    FROM reservation r WHERE r.id = p_reservation_id;
+    FOR season IN season_cursor 
+    LOOP
+        IF v_reservation_date BETWEEN season.start_date AND season.end_date THEN
+        RETURN season.id;
+        ELSE RETURN NULL;
+        END IF;
+    END LOOP;
+    
+END;
 
 -- Triggery
 -- Czy guest ma przynajmniej 1 formę kontaktu - create/update
@@ -251,6 +265,16 @@ BEGIN
 END;
 
 
+-- Brak możliwości modyfikacji płatności (możliwe, że jest też inny sposób rozwiązania tego niż trigger)
+CREATE OR REPLACE TRIGGER block_payment_update
+BEFORE UPDATE ON payment  
+DECLARE 
+e_no_update_allowed EXCEPTION;
+BEGIN
+    RAISE e_no_update_allowed;
+    EXCEPTION WHEN e_no_update_allowed THEN
+    dbms_output.put_line('Updating PAYMENT table is not allowed');
+END;
 --Testy
 SET SERVEROUTPUT ON;
 BEGIN
