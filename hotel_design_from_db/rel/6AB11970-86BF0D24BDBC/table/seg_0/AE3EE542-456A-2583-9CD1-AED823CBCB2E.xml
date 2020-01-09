@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AE3EE542-456A-2583-9CD1-AED823CBCB2E" schemaObject="FA502B5E-7493-D178-5B2B-5157562A8AFC" name="ROOM_TYPE">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>ROOM_TYPE</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:38 UTC</createdTime>
+<commentInRDBMS><![CDATA[Defines possible room types.]]></commentInRDBMS>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="E82DF6DF-AB69-2688-E14A-288A8C95A7D1">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>ROOM_TYPE</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCache>0</autoIncrementCache>
+</Column>
+<Column name="NAME" id="E8DF7A99-6387-A5F4-4AF5-456EF52D2CE8">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>ROOM_TYPE</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BASE_PRICE" id="6B74D9C8-2D5E-C16A-2C1C-639281846D13">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>ROOM_TYPE</sourceObjSchema>
+<sourceObjName>BASE_PRICE</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1958F9E5-0C97-7389-94D8-F10E9154B7A7" name="ROOM_TYPE_PK">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>ROOM_TYPE_PK</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:40 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E82DF6DF-AB69-2688-E14A-288A8C95A7D1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6E25B155-148F-BEDD-8432-31805299DA79" schemaObject="FA502B5E-7493-D178-5B2B-5157562A8AFC" name="ROOM_TYPE_PK">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>ROOM_TYPE_PK</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E82DF6DF-AB69-2688-E14A-288A8C95A7D1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

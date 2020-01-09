@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="853E97DB-AB3F-7C4A-95BC-2FBEA68E3DD5" schemaObject="FA502B5E-7493-D178-5B2B-5157562A8AFC" name="GUESTS_IN_RESERVATION">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>GUESTS_IN_RESERVATION</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:38 UTC</createdTime>
+<commentInRDBMS><![CDATA[Stores information about guests assigned to specific reservations.]]></commentInRDBMS>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="GUEST_ID" id="502A4646-409B-28C6-3ECA-39046D25F83A">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>GUESTS_IN_RESERVATION</sourceObjSchema>
+<sourceObjName>GUEST_ID</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="31353C8D-9B3D-8E74-6C1D-1E193A308ADA" referredColumn="44672E43-B00F-D40F-0AAE-77304328C929"/>
+</associations>
+</Column>
+<Column name="RESERVATION_ID" id="E1D157E2-4E40-A94E-1AD8-83946407750A">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>GUESTS_IN_RESERVATION</sourceObjSchema>
+<sourceObjName>RESERVATION_ID</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8DBF4149-9BAE-858E-61A6-9BEF44477EC1" referredColumn="31DB62F6-0090-2F8F-027A-08A7BA2F25F1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3B69F462-E2CE-C044-F6C7-3DCA2B3B5ABD" name="GUESTS_IN_RESERVATION_PK">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>GUESTS_IN_RESERVATION_PK</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:40 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="502A4646-409B-28C6-3ECA-39046D25F83A"/>
+<colUsage columnID="E1D157E2-4E40-A94E-1AD8-83946407750A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CF5843D2-F1E0-6EC9-E2A6-74B35C028986" schemaObject="FA502B5E-7493-D178-5B2B-5157562A8AFC" name="GUESTS_IN_RESERVATION_PK">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>GUESTS_IN_RESERVATION_PK</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="502A4646-409B-28C6-3ECA-39046D25F83A"/>
+<colUsage columnID="E1D157E2-4E40-A94E-1AD8-83946407750A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4B637F37-C0E4-EB06-C932-8E717C5B547D" name="GSTS_IN_RSRV_GST_FK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:41 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="502A4646-409B-28C6-3ECA-39046D25F83A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2B0697F5-B46F-F611-5AC5-FBC90F75DBF7" name="GSTS_IN_RSRV_RSRV_FK">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:41 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1D157E2-4E40-A94E-1AD8-83946407750A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

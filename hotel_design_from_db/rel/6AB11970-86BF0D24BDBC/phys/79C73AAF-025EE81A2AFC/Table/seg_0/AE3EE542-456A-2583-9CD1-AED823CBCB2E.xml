@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="ROOM_TYPE" directorySegmentName="seg_0" id="AE3EE542-456A-2583-9CD1-AED823CBCB2E">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:38 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<schemaObject>FA502B5E-7493-D178-5B2B-5157562A8AFC</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>209A6009-AD97-7695-1487-96820D2254AC</segment>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="BASE_PRICE" id="6B74D9C8-2D5E-C16A-2C1C-639281846D13">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="E82DF6DF-AB69-2688-E14A-288A8C95A7D1">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="E8DF7A99-6387-A5F4-4AF5-456EF52D2CE8">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="ROOM_TYPE_PK" id="6E25B155-148F-BEDD-8432-31805299DA79">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<schemaObject>FA502B5E-7493-D178-5B2B-5157562A8AFC</schemaObject>
+<segment>53D2E247-AB55-D1CC-5083-8B13349E227F</segment>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="ROOM_TYPE_PK" id="1958F9E5-0C97-7389-94D8-F10E9154B7A7">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:40 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<segment>53D2E247-AB55-D1CC-5083-8B13349E227F</segment>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+<existingIndex>6E25B155-148F-BEDD-8432-31805299DA79</existingIndex>
+<indexSegment>53D2E247-AB55-D1CC-5083-8B13349E227F</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

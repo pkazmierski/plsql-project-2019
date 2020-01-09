@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="DOCUMENT_TYPE" directorySegmentName="seg_0" id="EF52ACC0-FAAA-CE4D-AE2C-B5001A20C09E">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:38 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<schemaObject>FA502B5E-7493-D178-5B2B-5157562A8AFC</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>209A6009-AD97-7695-1487-96820D2254AC</segment>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID" id="7A3941EE-F622-EE70-CEC2-29FAFA8E0CA0">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="CF7E944B-5654-B02A-CA6F-CA83C30FC472">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DOCUMENT_TYPE_PK" id="C32BFB3B-B959-74B2-90FC-0F6BBA8D5A5A">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<schemaObject>FA502B5E-7493-D178-5B2B-5157562A8AFC</schemaObject>
+<segment>53D2E247-AB55-D1CC-5083-8B13349E227F</segment>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="DOCUMENT_TYPE_PK" id="F132E16E-DA4E-F62A-62C3-507AEFA931B2">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:40 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<segment>53D2E247-AB55-D1CC-5083-8B13349E227F</segment>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+<existingIndex>C32BFB3B-B959-74B2-90FC-0F6BBA8D5A5A</existingIndex>
+<indexSegment>53D2E247-AB55-D1CC-5083-8B13349E227F</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

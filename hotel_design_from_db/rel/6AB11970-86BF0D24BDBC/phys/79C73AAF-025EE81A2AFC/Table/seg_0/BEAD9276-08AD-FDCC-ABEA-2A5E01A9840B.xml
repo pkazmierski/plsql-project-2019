@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="PAYMENT" directorySegmentName="seg_0" id="BEAD9276-08AD-FDCC-ABEA-2A5E01A9840B">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:38 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<schemaObject>FA502B5E-7493-D178-5B2B-5157562A8AFC</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>209A6009-AD97-7695-1487-96820D2254AC</segment>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="AMOUNT" id="25AB4559-786A-907F-B809-809D87CE3E33">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RESERVATION_ID" id="32DB219C-6C5E-B996-5FB0-A1BEBF942122">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PAYMENT_TYPE_ID" id="7DFEE74D-26EA-58EF-C4C7-958FB8E51F8A">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="B33B8CE5-A9CA-B21D-1148-1957EC8E566C">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PAYMENT_PK" id="DDE4DA3F-B359-FB29-4C3A-437F015E4E31">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:39 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<schemaObject>FA502B5E-7493-D178-5B2B-5157562A8AFC</schemaObject>
+<segment>53D2E247-AB55-D1CC-5083-8B13349E227F</segment>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="PYMNT_PYMNT_TP_FK" id="32E8451C-C177-4D61-7ED2-2ADE58F506B7">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:41 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="PYMNTS_RSVR_FK" id="6DB02666-3C43-7758-5F3D-B62500DC520D">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:41 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PAYMENT_PK" id="63940568-C804-8F4C-155E-A7618D5FE1F8">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:40 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<segment>53D2E247-AB55-D1CC-5083-8B13349E227F</segment>
+<tableSpace>E00FF705-6DB0-FAFA-B04A-35C4E6148FB9</tableSpace>
+<existingIndex>DDE4DA3F-B359-FB29-4C3A-437F015E4E31</existingIndex>
+<indexSegment>53D2E247-AB55-D1CC-5083-8B13349E227F</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

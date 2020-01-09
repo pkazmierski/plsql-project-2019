@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="CHECK_CONTACT_DATA" directorySegmentName="seg_0" id="1E4D9B25-82ED-F2BB-8CF8-71BA5FA7EE32">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>CHECK_CONTACT_DATA</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:41 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<actions>INSERT</actions>
+<body><![CDATA[DECLARE
+e_no_contact_provided EXCEPTION;
+BEGIN
+    IF :NEW.email = NULL AND :NEW.phone = NULL THEN
+    RAISE e_no_contact_provided;
+    END IF;
+    EXCEPTION WHEN e_no_contact_provided THEN
+    dbms_output.put_line('At least one method of contact per guest must be provided');
+END;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<owner>BF93C681-4BE1-1D14-EA74-E51573DF9606</owner>
+<table>47EE6ABB-0DEC-7F6E-AE7B-0DA45F4D8448</table>
+</TriggerOraclev10g>

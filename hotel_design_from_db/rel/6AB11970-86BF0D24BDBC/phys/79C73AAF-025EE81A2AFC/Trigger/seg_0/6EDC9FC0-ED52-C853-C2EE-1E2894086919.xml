@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="BLOCK_PAYMENT_UPDATE" directorySegmentName="seg_0" id="6EDC9FC0-ED52-C853-C2EE-1E2894086919">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjSchema>HOTEL</sourceObjSchema>
+<sourceObjName>BLOCK_PAYMENT_UPDATE</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:41 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<actions>UPDATE</actions>
+<body><![CDATA[DECLARE 
+e_no_update_allowed EXCEPTION;
+BEGIN
+    RAISE e_no_update_allowed;
+    EXCEPTION WHEN e_no_update_allowed THEN
+    dbms_output.put_line('Updating PAYMENT table is not allowed');
+END;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<owner>BF93C681-4BE1-1D14-EA74-E51573DF9606</owner>
+<scope>FOR EACH STATEMENT</scope>
+<table>BEAD9276-08AD-FDCC-ABEA-2A5E01A9840B</table>
+</TriggerOraclev10g>

@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="HOTEL" directorySegmentName="seg_0" id="BF93C681-4BE1-1D14-EA74-E51573DF9606">
+<sourceConnName>hotel</sourceConnName>
+<sourceObjName>HOTEL</sourceObjName>
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-09 13:47:37 UTC</createdTime>
+<ownerDesignName>hotel_design_from_db</ownerDesignName>
+<schemaObject>FA502B5E-7493-D178-5B2B-5157562A8AFC</schemaObject>
+</UserOraclev10g>
