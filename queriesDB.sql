@@ -204,30 +204,41 @@ BEGIN
     END IF;
 END;
 
-CREATE OR REPLACE FUNCTION room_price(p_guest_id guest.id%TYPE, p_room_id room.id%TYPE)
-RETURN NUMBER
-AS
+CREATE OR REPLACE FUNCTION room_price (
+    p_guest_id guest.id%TYPE, p_room_id room.id%TYPE
+) RETURN NUMBER AS
+
     v_calculated_price room_type.base_price%TYPE;
     v_base_price room_type.base_price%TYPE;
     v_season_multiplier season_pricing.multiplier%TYPE;
     v_guest_status_multiplier guest_status.multiplier%TYPE;
 BEGIN
-    SELECT rt.base_price INTO v_base_price
-    FROM room r JOIN room_type rt ON r.room_type_id = rt.id
+    SELECT rt.base_price
+    INTO v_base_price
+    FROM room r
+    LEFT JOIN room_type rt
+    ON r.room_type_id = rt.id
     WHERE r.id = p_room_id;
-    
-    SELECT gs.multiplier INTO v_guest_status_multiplier
-    FROM guest g LEFT JOIN guest_status gs ON g.status_id = gs.id
+
+    SELECT gs.multiplier
+    INTO v_guest_status_multiplier
+    FROM guest g
+    LEFT JOIN guest_status gs
+    ON g.status_id = gs.id
     WHERE g.id = p_guest_id;
-    
-    SELECT multiplier into v_season_multiplier
-    from season_pricing
-    where SYSDATE >= start_date AND SYSDATE <= end_date;
-    IF SQL%NOTFOUND THEN
-        v_season_multiplier := 1.0;
-    END IF;
-    
-    RETURN TRUNC(v_base_price * v_guest_status_multiplier * v_season_multiplier, 2);
+
+    BEGIN
+        SELECT multiplier
+        INTO v_season_multiplier
+        FROM season_pricing
+        WHERE sysdate >= start_date AND sysdate <= end_date;
+
+    EXCEPTION
+        WHEN no_data_found THEN
+            v_season_multiplier := 1.0;
+    END;
+
+    RETURN trunc(v_base_price * v_guest_status_multiplier * v_season_multiplier, 2);
 END;
 
 -- W jakim sezonie była dana rezerwacja
@@ -275,6 +286,7 @@ BEGIN
     EXCEPTION WHEN e_no_update_allowed THEN
     dbms_output.put_line('Updating PAYMENT table is not allowed');
 END;
+
 --Testy
 SET SERVEROUTPUT ON;
 BEGIN
