@@ -260,7 +260,7 @@ BEGIN
                        ON rt.id = r.room_type_id
                        WHERE ( p_date_from NOT BETWEEN res.checkin_date AND res.checkout_date ) AND ( p_date_to NOT BETWEEN res.checkin_date
                        AND res.checkout_date ) AND rt.name LIKE p_room_type;
-
+S
     RETURN my_cursor;
 END;
 
@@ -358,7 +358,7 @@ END;
 -- DO SPRAWDZENIA widok Wolne pokoje (aktualnie)
 
 CREATE OR REPLACE VIEW free_rooms AS
-    SELECT r.id, rt.name, rt.base_price
+    SELECT r.id, rt.name, rt.base_price, rt.name
     FROM reservation res
     LEFT JOIN room r
     ON res.room_id = r.id
