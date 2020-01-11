@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F4DE7ECA-6F53-6992-903C-060A9B752004" schemaObject="7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6" name="SEASON_PRICING">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F4DE7ECA-6F53-6992-903C-060A9B752004" name="SEASON_PRICING">
 <createdBy>user</createdBy>
 <createdTime>2020-01-04 17:29:40 UTC</createdTime>
 <comment><![CDATA[Defines the pricing depending on the season.]]></comment>
@@ -53,6 +53,17 @@
 <use>1</use>
 <logicalDatatype>LOGDT020</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="15ECC7BB-249F-6757-84DE-33CBAFD1ABEB">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-11 15:38:10 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>

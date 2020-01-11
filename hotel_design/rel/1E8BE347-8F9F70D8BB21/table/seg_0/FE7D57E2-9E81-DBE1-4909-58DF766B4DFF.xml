@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FE7D57E2-9E81-DBE1-4909-58DF766B4DFF" schemaObject="7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6" name="PAYMENT">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FE7D57E2-9E81-DBE1-4909-58DF766B4DFF" name="PAYMENT">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-01 19:01:11 UTC</createdTime>
 <comment><![CDATA[Stores information about payments.]]></comment>

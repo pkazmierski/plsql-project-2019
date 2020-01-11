@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8DE99BC6-7914-64F1-AD71-2C2842F8DCC3" schemaObject="7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6" name="PAYMENTS_FOR_RESERVATION">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8DE99BC6-7914-64F1-AD71-2C2842F8DCC3" name="PAYMENTS_FOR_RESERVATION">
 <createdBy>Piotr</createdBy>
 <createdTime>2020-01-04 18:45:14 UTC</createdTime>
 <comment><![CDATA[Stores informations about payments (including partial payments) for reservations.]]></comment>
