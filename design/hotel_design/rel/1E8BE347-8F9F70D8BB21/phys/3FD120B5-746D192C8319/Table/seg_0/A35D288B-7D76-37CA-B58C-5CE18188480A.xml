@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="DOCUMENT_TYPE" directorySegmentName="seg_0" id="A35D288B-7D76-37CA-B58C-5CE18188480A">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:25:58 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<schemaObject>7FCE7BD5-1D33-7104-94B1-2BA2E7D0AFA6</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="Name" id="2B397222-D19A-1643-3527-9883335B11AA">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:25:58 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Id" id="9C9DBEA5-E4A2-91AF-2733-A6A76E6816E7">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:25:58 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="document_type_PK" id="9B6BC860-447B-0442-FC8C-C8DE34A6EF56">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-04 19:25:58 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>
