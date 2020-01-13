@@ -1,3 +1,70 @@
+-- OK Ile z wymaganej kwoty rezerwacji zostało już wpłacone/ile do zapłacenia
+CREATE OR REPLACE FUNCTION left_to_pay(
+    p_reservation_id reservation.id%TYPE
+) RETURN NUMBER AS
+    v_res_price    reservation.price%TYPE;
+    v_payments_sum payment.amount%TYPE := 0;
+BEGIN
+    BEGIN
+        SELECT
+            SUM(amount)
+        INTO v_payments_sum
+        FROM
+            payment
+        WHERE
+            reservation_id = p_reservation_id;
+
+        IF v_payments_sum IS NULL THEN
+            v_payments_sum := 0;
+        END IF;
+    EXCEPTION
+        WHEN no_data_found THEN
+            v_payments_sum := 0;
+    END;
+
+    SELECT
+        price
+    INTO v_res_price
+    FROM
+        reservation res
+    WHERE
+        id = p_reservation_id;
+
+    RETURN trunc(v_res_price - v_payments_sum, 2);
+END;
+
+-- DO SPRAWDZENIA Zwracanie całych rzędów pokoi, które są wolne i mają podane parametry (filtrowanie, niech będą defaulty albo jakieś inne ogarnięcie przypadków, gdy nie ma podanego danego parametru)
+CREATE OR REPLACE FUNCTION room_filter(
+    p_date_from reservation.checkin_date%TYPE DEFAULT to_char(sysdate),
+    p_date_to reservation.checkout_date%TYPE DEFAULT to_char(
+            sysdate + 7),
+    p_room_type room_type.name%TYPE DEFAULT '%') RETURN SYS_REFCURSOR AS
+    my_cursor SYS_REFCURSOR;
+BEGIN
+    OPEN my_cursor FOR SELECT
+                           r.id,
+                           rt.name,
+                           rt.base_price
+                       FROM
+                           reservation res
+                               LEFT JOIN room r
+                                         ON res.room_id = r.id
+                               LEFT JOIN room_type rt
+                                         ON rt.id = r.room_type_id
+                       WHERE
+                             (p_date_from NOT BETWEEN res.checkin_date AND res.checkout_date)
+                         AND (p_date_to NOT BETWEEN res.checkin_date
+                           AND res.checkout_date)
+                         AND rt.name LIKE p_room_type;
+    RETURN my_cursor;
+END;
+
+
+
+--------------
+--NA PÓŹNIEJ--
+--------------
+
 -- DO SPRAWDZENIA czy rezerwacja zostala oplacona
 CREATE OR REPLACE FUNCTION is_paid(
     p_reservation_id reservation.id%TYPE
@@ -96,69 +163,4 @@ BEGIN
         END LOOP;
 
     RETURN NULL;
-END;
-
--- DO SPRAWDZENIA Zwracanie całych rzędów pokoi, które są wolne i mają podane parametry (filtrowanie, niech będą defaulty albo jakieś inne ogarnięcie przypadków, gdy nie ma podanego danego parametru)
-CREATE OR REPLACE FUNCTION available_rooms(
-    p_date_from reservation.checkin_date%TYPE DEFAULT to_char(sysdate),
-    p_date_to reservation.checkout_date%TYPE DEFAULT to_char(
-            sysdate + 7),
-    p_room_type room_type.name%TYPE DEFAULT '%') RETURN SYS_REFCURSOR AS
-    my_cursor SYS_REFCURSOR;
-BEGIN
-    OPEN my_cursor FOR SELECT
-                           r.id,
-                           rt.name,
-                           rt.base_price
-                       FROM
-                           reservation res
-                               LEFT JOIN room r
-                                         ON res.room_id = r.id
-                               LEFT JOIN room_type rt
-                                         ON rt.id = r.room_type_id
-                       WHERE
-                             (p_date_from NOT BETWEEN res.checkin_date AND res.checkout_date)
-                         AND (p_date_to NOT BETWEEN res.checkin_date
-                           AND res.checkout_date)
-                         AND rt.name LIKE p_room_type;
-    s
-    RETURN my_cursor;
-END;
-
-
-
--- OK Ile z wymaganej kwoty rezerwacji zostało już wpłacone/ile do zapłacenia
-CREATE OR REPLACE FUNCTION yet_to_pay(
-    p_reservation_id reservation.id%TYPE
-) RETURN NUMBER AS
-    v_res_price    reservation.price%TYPE;
-    v_payments_sum payment.amount%TYPE := 0;
-BEGIN
-    BEGIN
-        SELECT
-            SUM(amount)
-        INTO v_payments_sum
-        FROM
-            payment
-        WHERE
-            reservation_id = p_reservation_id;
-
-        IF v_payments_sum IS NULL THEN
-            v_payments_sum := 0;
-        END IF;
-    EXCEPTION
-        WHEN no_data_found THEN
-            v_payments_sum := 0;
-    END;
-
-    dbms_output.put_line('res id: ' || p_reservation_id || ', v_payments_sum: ' || v_payments_sum);
-    SELECT
-        price
-    INTO v_res_price
-    FROM
-        reservation res
-    WHERE
-        id = p_reservation_id;
-
-    RETURN trunc(v_res_price - v_payments_sum, 2);
 END;
