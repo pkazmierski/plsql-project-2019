@@ -87,29 +87,6 @@ END;
 --NA PÓŹNIEJ--
 --------------
 
--- DO SPRAWDZENIA czy rezerwacja zostala oplacona
-CREATE OR REPLACE FUNCTION is_paid(
-    p_reservation_id reservation.id%TYPE
-) RETURN BOOLEAN AS
-    v_reservation_status_name reservation_status.name%TYPE;
-BEGIN
-    SELECT
-        rs.name
-    INTO v_reservation_status_name
-    FROM
-        reservation r
-            JOIN reservation_status rs
-                 ON r.reservation_status_id = rs.id
-    WHERE
-        r.id = p_reservation_id;
-
-    IF v_reservation_status_name = 'confirmed' THEN
-        RETURN TRUE;
-    ELSE
-        RETURN FALSE;
-    END IF;
-END;
-
 -- DO POPRAWY cena za pokoj
 CREATE OR REPLACE FUNCTION room_price(
     p_guest_id guest.id%TYPE,
@@ -158,7 +135,7 @@ BEGIN
     RETURN trunc(v_base_price * v_guest_status_multiplier * v_season_multiplier, 2);
 END;
 
--- DO SPRAWDZENIA W jakim sezonie była dana rezerwacja
+-- OK W jakim sezonie była dana rezerwacja
 CREATE OR REPLACE FUNCTION season_for_reservation(
     p_reservation_id reservation.id%TYPE
 ) RETURN season_pricing.id%TYPE AS

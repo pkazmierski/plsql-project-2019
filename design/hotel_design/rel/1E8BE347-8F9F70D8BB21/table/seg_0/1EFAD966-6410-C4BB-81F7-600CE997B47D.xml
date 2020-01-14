@@ -110,6 +110,19 @@
 <colAssociation fkAssociation="A6FE2C2A-455C-E1AA-57D8-655A02A8BEE3" referredColumn="CFF32371-7ECC-335B-793B-C6113146C411"/>
 </associations>
 </Column>
+<Column name="STAY_DURATION" id="AFA9F6CC-2C46-F709-B400-729A1B6D4CE0">
+<createdBy>Piotr</createdBy>
+<createdTime>2020-01-14 18:44:19 UTC</createdTime>
+<ownerDesignName>hotel_design</ownerDesignName>
+<formulaDesc>TRUNC(CHECKOUT_DATE-CHECKIN_DATE+1)</formulaDesc>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<computed>true</computed>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="3057C5D5-45C9-E709-728D-28559EE1A7DE" name="RESERVATION_PK">
