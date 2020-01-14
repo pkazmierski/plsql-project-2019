@@ -1,37 +1,3 @@
--- -- OK sprawdza, po dodaniu nowy płatności sprawdza, czy nie została przepłacona kwota i czy trzeba zmienić status
--- CREATE OR REPLACE TRIGGER check_payments2
---     FOR INSERT
---     ON payment
---     COMPOUND TRIGGER
---     TYPE T_PAYMENT_IDS IS TABLE OF payment.reservation_id%TYPE INDEX BY BINARY_INTEGER;
---     v_payment_ids T_PAYMENT_IDS;
---     v_counter BINARY_INTEGER := 1;
---
--- BEFORE STATEMENT IS
--- BEGIN
---     NULL;
--- END BEFORE STATEMENT;
---
---     BEFORE EACH ROW IS
---     BEGIN
---         NULL;
---     END BEFORE EACH ROW;
---
---     AFTER EACH ROW IS
---     BEGIN
---         v_payment_ids(v_counter) := :new.reservation_id;
---         v_counter := v_counter + 1;
---     END AFTER EACH ROW;
---
---     AFTER STATEMENT IS
---     BEGIN
---         FOR i IN 1..v_payment_ids.count
---             LOOP
---                 verify_reservation_status_changed(:new.reservation_id, :new.amount);
---             END LOOP;
---     END AFTER STATEMENT;
---     END check_payments2;
-
 -- OK Sprawdza platnosci
 CREATE OR REPLACE TRIGGER check_payments
     BEFORE INSERT
@@ -41,7 +7,6 @@ BEGIN
     verify_reservation_status_changed(:new.reservation_id, :new.amount);
 END check_payments;
 
---check payments może pójdzie jako zwykły trigger?...
 -- OK Czy guest ma przynajmniej 1 formę kontaktu - create/update
 CREATE OR REPLACE TRIGGER check_contact_data
     BEFORE
@@ -99,3 +64,40 @@ END BEFORE STATEMENT;
             END LOOP;
     END AFTER STATEMENT;
     END check_season;
+
+
+-- STARE
+
+-- -- OK sprawdza, po dodaniu nowy płatności sprawdza, czy nie została przepłacona kwota i czy trzeba zmienić status
+-- CREATE OR REPLACE TRIGGER check_payments2
+--     FOR INSERT
+--     ON payment
+--     COMPOUND TRIGGER
+--     TYPE T_PAYMENT_IDS IS TABLE OF payment.reservation_id%TYPE INDEX BY BINARY_INTEGER;
+--     v_payment_ids T_PAYMENT_IDS;
+--     v_counter BINARY_INTEGER := 1;
+--
+-- BEFORE STATEMENT IS
+-- BEGIN
+--     NULL;
+-- END BEFORE STATEMENT;
+--
+--     BEFORE EACH ROW IS
+--     BEGIN
+--         NULL;
+--     END BEFORE EACH ROW;
+--
+--     AFTER EACH ROW IS
+--     BEGIN
+--         v_payment_ids(v_counter) := :new.reservation_id;
+--         v_counter := v_counter + 1;
+--     END AFTER EACH ROW;
+--
+--     AFTER STATEMENT IS
+--     BEGIN
+--         FOR i IN 1..v_payment_ids.count
+--             LOOP
+--                 verify_reservation_status_changed(:new.reservation_id, :new.amount);
+--             END LOOP;
+--     END AFTER STATEMENT;
+--     END check_payments2;
