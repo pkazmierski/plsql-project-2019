@@ -18,21 +18,26 @@ WHERE
 
 -- OK kto w danym dniu nie ma zapłaty za hotel
 CREATE OR REPLACE VIEW not_paid_today AS
+WITH
+    payment_count AS (SELECT
+                          reservation_id,
+                          COUNT(*) as "Installments paid"
+                      FROM
+                          payment
+                      GROUP BY reservation_id)
 SELECT
-    res.id,
+    res.id              AS "Reservation ID",
     g.first_name,
     g.last_name,
-    yet_to_pay(res.id) AS "Left to pay"
+    LEFT_TO_PAY(res.id) AS "Left to pay",
+    "Installments paid"
 FROM
     reservation res
-        LEFT JOIN reservation_status rs
-                  ON res.reservation_status_id = rs.id
-        LEFT JOIN guests_in_reservation gir
-                  ON gir.reservation_id = res.id
-        LEFT JOIN guest g
-                  ON g.id = gir.guest_id
-        LEFT JOIN payment p
-                  ON res.id = p.reservation_id
+        JOIN reservation_status rs
+             ON res.reservation_status_id = rs.id
+        JOIN guest g
+             ON res.payer_id = g.id
+        JOIN payment_count ON payment_count.reservation_id = res.id
 WHERE
         rs.name IN (
                     'unpaid', 'partially_paid'

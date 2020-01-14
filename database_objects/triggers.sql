@@ -1,3 +1,36 @@
+CREATE OR REPLACE TRIGGER check_payments
+    FOR INSERT
+    ON payment
+    COMPOUND TRIGGER
+    TYPE T_PAYMENT_IDS IS TABLE OF payment.reservation_id%TYPE INDEX BY BINARY_INTEGER;
+    v_payment_ids T_PAYMENT_IDS;
+    v_counter BINARY_INTEGER := 1;
+
+BEFORE STATEMENT IS
+BEGIN
+    NULL;
+END BEFORE STATEMENT;
+
+    BEFORE EACH ROW IS
+    BEGIN
+        NULL;
+    END BEFORE EACH ROW;
+
+    AFTER EACH ROW IS
+    BEGIN
+        v_payment_ids(v_counter) := :NEW.reservation_id;
+        v_counter := v_counter + 1;
+    END AFTER EACH ROW;
+
+    AFTER STATEMENT IS
+    BEGIN
+        FOR i IN 1..v_payment_ids.count
+            LOOP
+                verify_reservation_status_changed(v_payment_ids(i));
+            END LOOP;
+    END AFTER STATEMENT;
+    END check_payments;
+
 -- DO POPRAWY (NIE BLOKUJE NIC, EXCEPTION PRAWD. DO ZMIANY) Czy guest ma przynajmniej 1 formę kontaktu - create/update
 CREATE OR REPLACE TRIGGER check_contact_data
     BEFORE
@@ -7,14 +40,13 @@ CREATE OR REPLACE TRIGGER check_contact_data
 DECLARE
     e_no_contact_provided EXCEPTION;
 BEGIN
-    IF :new.email = NULL AND :new.phone = NULL THEN
+    IF :new.email IS NULL AND :new.phone IS NULL THEN
         RAISE e_no_contact_provided;
     END IF;
 EXCEPTION
     WHEN e_no_contact_provided THEN
         dbms_output.put_line('At least one method of contact per guest must be provided');
 END;
-
 
 -- DO POPRAWY (NIC NIE BLOKUJE, EXCPETION PRAWD. DO ZMIANY) Brak możliwości modyfikacji płatności (możliwe, że jest też inny sposób rozwiązania tego niż trigger)
 CREATE OR REPLACE TRIGGER block_payment_update

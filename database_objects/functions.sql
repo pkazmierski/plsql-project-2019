@@ -31,7 +31,7 @@ BEGIN
         id = p_reservation_id;
 
     RETURN trunc(v_res_price - v_payments_sum, 2);
-END;
+END left_to_pay;
 
 -- DO SPRAWDZENIA Zwracanie całych rzędów pokoi, które są wolne i mają podane parametry (filtrowanie, niech będą defaulty albo jakieś inne ogarnięcie przypadków, gdy nie ma podanego danego parametru)
 CREATE OR REPLACE FUNCTION room_filter(
