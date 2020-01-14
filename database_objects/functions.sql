@@ -33,6 +33,28 @@ BEGIN
     RETURN trunc(v_res_price - v_payments_sum, 2);
 END left_to_pay;
 
+-- OK weryfikuje, czy dany sezon nie nakłada się z innymi
+CREATE OR REPLACE FUNCTION verify_season_dates(p_season_id season_pricing.id%TYPE) RETURN BOOLEAN AS
+    v_current_season season_pricing%ROWTYPE;
+BEGIN
+    SELECT *
+    INTO v_current_season
+    FROM
+        season_pricing
+    WHERE
+        id = p_season_id;
+
+
+    FOR r_pricing IN (SELECT * FROM season_pricing)
+        LOOP
+            IF (v_current_season.end_date BETWEEN r_pricing.start_date AND r_pricing.end_date)
+                OR (v_current_season.start_date BETWEEN r_pricing.start_date AND r_pricing.end_date) THEN
+                RETURN FALSE;
+            END IF;
+        END LOOP;
+    RETURN TRUE;
+END verify_season_dates;
+
 -- DO SPRAWDZENIA Zwracanie całych rzędów pokoi, które są wolne i mają podane parametry (filtrowanie, niech będą defaulty albo jakieś inne ogarnięcie przypadków, gdy nie ma podanego danego parametru)
 CREATE OR REPLACE FUNCTION room_filter(
     p_date_from reservation.checkin_date%TYPE DEFAULT to_char(sysdate),

@@ -1,5 +1,7 @@
+-- OK uzywane w triggerze check_payments
 CREATE OR REPLACE PROCEDURE verify_reservation_status_changed(
-    p_reservation_id reservation.id%TYPE) AS
+    p_reservation_id reservation.id%TYPE,
+    p_amount payment.amount%TYPE) AS
     v_left_to_pay reservation.price%TYPE;
     v_reservation reservation%ROWTYPE;
 BEGIN
@@ -15,16 +17,17 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20000,
                                 'Cannot add payments to a reservation with status different than unpaid or partially_paid. Reservation ID: ' ||
                                 p_reservation_id);
-    ELSIF v_left_to_pay < 0 THEN
+    ELSIF v_left_to_pay - p_amount < 0 THEN
         RAISE_APPLICATION_ERROR(-20001,
-                                'Overpay on reservation no. ' || p_reservation_id || '. Overpay: ' || -v_left_to_pay);
-    ELSIF v_left_to_pay = 0 THEN
+                                'Overpay on reservation no. ' || p_reservation_id || '. Overpay: ' ||
+                                TO_CHAR(p_amount - v_left_to_pay));
+    ELSIF v_left_to_pay - p_amount = 0 THEN
         UPDATE reservation
         SET
             reservation_status_id = 3
         WHERE
             id = p_reservation_id;
-    ELSIF v_left_to_pay > 0 THEN
+    ELSIF v_left_to_pay - p_amount > 0 THEN
         UPDATE reservation
         SET
             reservation_status_id = 2
