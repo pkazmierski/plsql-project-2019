@@ -1,3 +1,62 @@
+CREATE OR REPLACE PROCEDURE generate_year_by_year_report(
+    p_start_year NUMBER, p_end_year NUMBER) AS
+    v_report_table_name CHAR(16 CHAR);
+    v_current_income    NUMBER(18, 2);
+    v_current_guests    INTEGER;
+    table_does_not_exist EXCEPTION;
+    PRAGMA EXCEPTION_INIT (table_does_not_exist, -942);
+BEGIN
+    IF p_end_year > EXTRACT(YEAR FROM sysdate) THEN
+        RAISE_APPLICATION_ERROR(-20006, 'End year cannot be later than the current year');
+    END IF;
+
+    v_report_table_name := 'report_' || to_char(p_start_year) || '_' || to_char(p_end_year);
+
+    --drop the existing report table and ignore the exception if it does not exist
+    BEGIN
+        EXECUTE IMMEDIATE 'DROP TABLE ' || v_report_table_name;
+    EXCEPTION
+        WHEN table_does_not_exist THEN
+            NULL;
+    END;
+
+    --create a new table for the report
+    EXECUTE IMMEDIATE 'create table ' || v_report_table_name ||
+                      ' (year INTEGER, income NUMBER(18, 2), clientsCount INTEGER)';
+
+    FOR current_year IN p_start_year..p_end_year
+        LOOP
+            SELECT
+                SUM(price)
+            INTO v_current_income
+            FROM
+                reservation
+            WHERE
+                EXTRACT(YEAR FROM checkin_date) = current_year AND reservation_status_id IN (3,4,5);
+
+            IF v_current_income IS NULL THEN
+                v_current_income := 0;
+            END IF;
+
+            SELECT
+                COUNT(*)
+            INTO v_current_guests
+            FROM
+                guests_in_reservation gir
+                    LEFT JOIN reservation res ON gir.reservation_id = res.id
+            WHERE
+                EXTRACT(YEAR FROM checkin_date) = current_year AND reservation_status_id IN (3,4,5);
+
+            IF v_current_guests IS NULL THEN
+                v_current_guests := 0;
+            END IF;
+
+            EXECUTE IMMEDIATE 'INSERT INTO ' || v_report_table_name || ' VALUES(' || to_char(current_year) || ', ' ||
+                              to_char(v_current_income) || ', ' || to_char(v_current_guests) || ')';
+        END LOOP;
+END generate_year_by_year_report;
+
+
 -- OK uzywane w triggerze check_payments
 CREATE OR REPLACE PROCEDURE verify_reservation_status_changed(
     p_reservation_id reservation.id%TYPE,
