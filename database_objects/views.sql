@@ -42,3 +42,9 @@ WHERE
         rs.name IN (
                     'unpaid', 'partially_paid'
         );
+
+CREATE OR REPLACE VIEW free_rooms_one_week AS
+SELECT room_id, max_tenants, name, base_price
+    FROM table(room_filter_id) frm
+        JOIN room rm ON frm.room_id = rm.id
+        JOIN room_type rt ON rm.room_type_id = rt.id;

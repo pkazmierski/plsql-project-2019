@@ -83,14 +83,16 @@ BEGIN
     RETURN my_cursor;
 END;
 
+--typ potrzebny do T_ROOM_ID_TABLE
 CREATE OR REPLACE TYPE T_ROOM_ID_RECORD AS OBJECT
 (
     room_id INTEGER
 );
 
+-- typ potrzebny do room_filter_id
 CREATE OR REPLACE TYPE T_ROOM_ID_TABLE AS TABLE OF T_ROOM_ID_RECORD;
 
--- mozliwe ze da sie zoptymalizowac, zeby ta tabela byla od razu z ustalonym rozmiarem (np. wziac count z kursora)
+-- OK Zwracanie tabeli z id pokoi, które spełniają wymagania
 CREATE OR REPLACE FUNCTION room_filter_id(
     p_date_from reservation.checkin_date%TYPE DEFAULT sysdate,
     p_date_to reservation.checkout_date%TYPE DEFAULT sysdate + 7,
@@ -98,7 +100,6 @@ CREATE OR REPLACE FUNCTION room_filter_id(
     p_max_price room_type.base_price%TYPE DEFAULT 9999.00,
     p_room_type room_type.name%TYPE DEFAULT '%') RETURN T_ROOM_ID_TABLE AS
     v_ret         T_ROOM_ID_TABLE;
-    v_room_id     room.id%TYPE;
     c_rooms       SYS_REFCURSOR;
     TYPE T_ROOM_RECORD_TYPE IS RECORD (id room.id%TYPE, name room_type.name%TYPE, base_price room_type.base_price%TYPE);
     v_room_record T_ROOM_RECORD_TYPE;
