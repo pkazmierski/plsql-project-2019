@@ -100,7 +100,8 @@ CREATE TABLE reservation (
     room_id                INTEGER NOT NULL,
     reservation_status_id  INTEGER NOT NULL,
     price                  NUMBER(12, 2) NOT NULL,
-    payer_id               INTEGER NOT NULL
+    payer_id               INTEGER NOT NULL,
+    stay_duration          NUMBER AS ( trunc(checkout_date - checkin_date + 1) ) VIRTUAL
 )
 LOGGING;
 
