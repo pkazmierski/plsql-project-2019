@@ -65,6 +65,77 @@ END BEFORE STATEMENT;
     END AFTER STATEMENT;
     END check_season;
 
+CREATE OR REPLACE TRIGGER checkin_out_date_job_trigger
+    AFTER INSERT OR UPDATE OF checkin_date, checkout_date
+    ON reservation
+    FOR EACH ROW
+DECLARE
+--     v_job_name VARCHAR(30);
+    v_job_id          BINARY_INTEGER;
+    v_checkin_job_id  BINARY_INTEGER;
+    v_checkout_job_id BINARY_INTEGER;
+BEGIN
+    --     v_job_name := 'reservation_checkin_' || to_char(:new.id);
+
+--     dbms_scheduler commits, which is not allowed in triggers
+
+--     dbms_scheduler.CREATE_JOB(
+--             job_name => v_job_name,
+--             job_type => 'PLSQL_BLOCK',
+--             job_action => 'HOTEL.verify_reservation_status_checkin_job(' || to_char(:new.id) || ');',
+--             start_date => :new.checkin_date,
+--             comments => 'Check the reservation''s ' || to_char(:new.id) ||
+--                         ' payments and change the status accordingly');
+    IF UPDATING ('checkin_date') OR INSERTING THEN
+        BEGIN
+            SELECT
+                to_number(substr(job_name, 11))
+            INTO v_checkin_job_id
+            FROM
+                user_scheduler_jobs
+            WHERE
+                    job_action = 'HOTEL.verify_reservation_status_checkin_job(' || to_char(:new.id) || ');';
+        EXCEPTION
+            WHEN no_data_found THEN
+                v_checkin_job_id := 0;
+        END;
+
+        IF v_checkin_job_id != 0 THEN
+            DBMS_JOB.REMOVE(v_checkin_job_id);
+        END IF;
+
+        dbms_job.submit(
+                job => v_job_id,
+                what => 'HOTEL.verify_reservation_status_checkin_job(' || to_char(:new.id) || ');',
+                next_date => :new.checkin_date);
+    END IF;
+
+    IF UPDATING ('checkout_date') OR INSERTING THEN
+        BEGIN
+            SELECT
+                to_number(substr(job_name, 11))
+            INTO v_checkout_job_id
+            FROM
+                user_scheduler_jobs
+            WHERE
+                    job_action = 'HOTEL.verify_reservation_status_checkout_job(' || to_char(:new.id) || ');';
+        EXCEPTION
+            WHEN no_data_found THEN
+                v_checkout_job_id := 0;
+        END;
+
+        IF v_checkout_job_id != 0 THEN
+            DBMS_JOB.REMOVE(v_checkout_job_id);
+        END IF;
+
+        dbms_job.submit(
+                job => v_job_id,
+                what => 'HOTEL.verify_reservation_status_checkout_job(' || to_char(:new.id) || ');',
+                next_date => :new.checkout_date);
+    END IF;
+
+--     dbms_scheduler.ENABLE(v_job_name);
+END checkin_out_date_job_trigger;
 
 -- STARE
 

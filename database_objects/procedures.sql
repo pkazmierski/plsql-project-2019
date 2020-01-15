@@ -32,7 +32,8 @@ BEGIN
             FROM
                 reservation
             WHERE
-                EXTRACT(YEAR FROM checkin_date) = current_year AND reservation_status_id IN (3,4,5);
+                  EXTRACT(YEAR FROM checkin_date) = current_year
+              AND reservation_status_id IN (3, 4, 5);
 
             IF v_current_income IS NULL THEN
                 v_current_income := 0;
@@ -45,7 +46,8 @@ BEGIN
                 guests_in_reservation gir
                     LEFT JOIN reservation res ON gir.reservation_id = res.id
             WHERE
-                EXTRACT(YEAR FROM checkin_date) = current_year AND reservation_status_id IN (3,4,5);
+                  EXTRACT(YEAR FROM checkin_date) = current_year
+              AND reservation_status_id IN (3, 4, 5);
 
             IF v_current_guests IS NULL THEN
                 v_current_guests := 0;
@@ -56,6 +58,51 @@ BEGIN
         END LOOP;
 END generate_year_by_year_report;
 
+CREATE OR REPLACE PROCEDURE verify_reservation_status_checkin_job(
+    p_reservation_id reservation.id%TYPE) AS
+    v_reservation reservation%ROWTYPE;
+BEGIN
+    SELECT *
+    INTO v_reservation
+    FROM
+        reservation
+    WHERE
+        id = p_reservation_id;
+
+    IF v_reservation.reservation_status_id = 3 THEN
+        UPDATE reservation
+        SET
+            reservation_status_id = 4
+        WHERE
+            id = p_reservation_id;
+    ELSE
+        UPDATE reservation
+        SET
+            reservation_status_id = 6
+        WHERE
+            id = p_reservation_id;
+    END IF;
+END verify_reservation_status_checkin_job;
+
+CREATE OR REPLACE PROCEDURE verify_reservation_status_checkout_job(
+    p_reservation_id reservation.id%TYPE) AS
+    v_reservation reservation%ROWTYPE;
+BEGIN
+    SELECT *
+    INTO v_reservation
+    FROM
+        reservation
+    WHERE
+        id = p_reservation_id;
+
+    IF v_reservation.reservation_status_id = 4 THEN
+        UPDATE reservation
+        SET
+            reservation_status_id = 5
+        WHERE
+            id = p_reservation_id;
+    END IF;
+END verify_reservation_status_checkout_job;
 
 -- OK uzywane w triggerze check_payments
 CREATE OR REPLACE PROCEDURE verify_reservation_status_changed(
