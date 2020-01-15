@@ -5,7 +5,7 @@ FROM guest g
                    ON r.payer_id = g.id
 GROUP BY g.id, g.first_name, g.last_name;
 
--- 2. Ktory klient zaplaccil w najwiekszej ilosci rat
+-- 2. Ktory klient zaplacil w najwiekszej ilosci rat
 SELECT g.first_name, g.last_name, COUNT(p.id) "Installments"
 FROM guest g
          JOIN reservation res
@@ -47,7 +47,6 @@ FROM (
 GROUP BY "floor";
 
 -- 6. Ile jednej nocy można maksymalnie przenocować gości
-
 SELECT SUM(max_tenants)
 FROM room;
 

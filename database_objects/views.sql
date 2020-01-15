@@ -4,8 +4,7 @@ CREATE OR REPLACE VIEW free_rooms AS
 SELECT
     r.id,
     rt.name,
-    rt.base_price,
-    rt.name
+    rt.base_price
 FROM
     reservation res
         LEFT JOIN room r

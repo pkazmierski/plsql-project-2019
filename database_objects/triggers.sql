@@ -70,22 +70,10 @@ CREATE OR REPLACE TRIGGER checkin_out_date_job_trigger
     ON reservation
     FOR EACH ROW
 DECLARE
---     v_job_name VARCHAR(30);
     v_job_id          BINARY_INTEGER;
     v_checkin_job_id  BINARY_INTEGER;
     v_checkout_job_id BINARY_INTEGER;
 BEGIN
-    --     v_job_name := 'reservation_checkin_' || to_char(:new.id);
-
---     dbms_scheduler commits, which is not allowed in triggers
-
---     dbms_scheduler.CREATE_JOB(
---             job_name => v_job_name,
---             job_type => 'PLSQL_BLOCK',
---             job_action => 'HOTEL.verify_reservation_status_checkin_job(' || to_char(:new.id) || ');',
---             start_date => :new.checkin_date,
---             comments => 'Check the reservation''s ' || to_char(:new.id) ||
---                         ' payments and change the status accordingly');
     IF UPDATING ('checkin_date') OR INSERTING THEN
         BEGIN
             SELECT
@@ -133,42 +121,4 @@ BEGIN
                 what => 'HOTEL.verify_reservation_status_checkout_job(' || to_char(:new.id) || ');',
                 next_date => :new.checkout_date);
     END IF;
-
---     dbms_scheduler.ENABLE(v_job_name);
 END checkin_out_date_job_trigger;
-
--- STARE
-
--- -- OK sprawdza, po dodaniu nowy płatności sprawdza, czy nie została przepłacona kwota i czy trzeba zmienić status
--- CREATE OR REPLACE TRIGGER check_payments2
---     FOR INSERT
---     ON payment
---     COMPOUND TRIGGER
---     TYPE T_PAYMENT_IDS IS TABLE OF payment.reservation_id%TYPE INDEX BY BINARY_INTEGER;
---     v_payment_ids T_PAYMENT_IDS;
---     v_counter BINARY_INTEGER := 1;
---
--- BEFORE STATEMENT IS
--- BEGIN
---     NULL;
--- END BEFORE STATEMENT;
---
---     BEFORE EACH ROW IS
---     BEGIN
---         NULL;
---     END BEFORE EACH ROW;
---
---     AFTER EACH ROW IS
---     BEGIN
---         v_payment_ids(v_counter) := :new.reservation_id;
---         v_counter := v_counter + 1;
---     END AFTER EACH ROW;
---
---     AFTER STATEMENT IS
---     BEGIN
---         FOR i IN 1..v_payment_ids.count
---             LOOP
---                 verify_reservation_status_changed(:new.reservation_id, :new.amount);
---             END LOOP;
---     END AFTER STATEMENT;
---     END check_payments2;
