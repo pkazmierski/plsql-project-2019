@@ -2,7 +2,7 @@
 SET SERVEROUTPUT ON;
 
 BEGIN
-    dbms_output.put_line(room_price(1, 101));
+    dbms_output.put_line(room_price(1, 101, sysdate, sysdate+7));
 END;
 
 
