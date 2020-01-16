@@ -649,7 +649,7 @@ END checkin_out_date_job_trigger;
 --Views--
 ---------
 
--- DO SPRAWDZENIA widok Wolne pokoje (aktualnie)
+-- OK widok Wolne pokoje (aktualnie)
 CREATE OR REPLACE VIEW free_rooms AS
 SELECT
     r.id,
