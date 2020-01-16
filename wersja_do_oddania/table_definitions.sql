@@ -195,16 +195,6 @@ ALTER TABLE payment
         REFERENCES reservation ( id )
     NOT DEFERRABLE;
 
-ALTER TABLE payments_for_reservation
-    ADD CONSTRAINT pymnts_for_rsrv_pymnt_fk FOREIGN KEY ( payment_id )
-        REFERENCES payment ( id )
-    NOT DEFERRABLE;
-
-ALTER TABLE payments_for_reservation
-    ADD CONSTRAINT pymnts_for_rsrv_rsvr_fk FOREIGN KEY ( reservation_id )
-        REFERENCES reservation ( id )
-    NOT DEFERRABLE;
-
 ALTER TABLE room
     ADD CONSTRAINT rm_rm_tp_fk FOREIGN KEY ( room_type_id )
         REFERENCES room_type ( id )
